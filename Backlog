@@ -4,6 +4,8 @@ Usuario Interno:
 . Como cliente interno, quiero poder elegir donde buscar el auto para tener libertad de opción
 . Como cliente interno, quiero poder tener una opción de seguros (variedad) y de reparación con descuentos para no tener que contratarlos de forma externa
 . Como cliente interno, quiero servicio 24hs de atención cliente para despejar y pedir ayuda
+. Como clienteinterno, quiero poder ver le sitio web desde cualquier dispositivo (pc, tablet, celular, etc.)
+
 
 Usuario Externo:
 . Como cliente externo, quiero poder ver los autos en alquiler con sus detalles para tener claridad del producto
@@ -17,3 +19,6 @@ Administrador:
 . Como administrador, quiero facilidad de acceso a la información para acelerar el flujo de trabajo
 . Como administrador, quiero poder acceder a la base de datos de los clientes para control
 . Como administrador, quiero que la apágina tenga varios idiomas para ampliar el rango de clientes
+. Como administrador, voy a crear un formulario de regitro.
+. Como administrador, voy a implementar diseño responsivo para el sitio.
+
