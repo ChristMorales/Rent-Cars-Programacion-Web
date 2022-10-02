@@ -1,0 +1,19 @@
+Usuario Interno:
+. Como cliente interno, quiero poder acceder al historial de mis alquileres para llevar un control visual de los mismos
+. Como cliente interno, quiero poder seleccionar entre diferentes tarifas, con descuentos para sentirme incentivado por la empresa.
+. Como cliente interno, quiero poder elegir donde buscar el auto para tener libertad de opción
+. Como cliente interno, quiero poder tener una opción de seguros (variedad) y de reparación con descuentos para no tener que contratarlos de forma externa
+. Como cliente interno, quiero servicio 24hs de atención cliente para despejar y pedir ayuda
+
+Usuario Externo:
+. Como cliente externo, quiero poder ver los autos en alquiler con sus detalles para tener claridad del producto
+. Como cliente externo, quiero facilidad de pago, para economizar el tiempo
+. Como cliente externo, quiero ver opiniones de los usuarios para darme seguridad
+. Como cliente externo, quiero ver las opciones de autos diferenciados (precio, tipo, motivo) para darme seguridad
+
+Administrado:
+. Como administrador, quiero ver el historial de alquileres, de manera detallada (cuando se realizo, cuáles son los pendientes) para llevar un control
+. Como administrador, quiero ver el stock de autos para llevar un control
+. Como administrador, quiero facilidad de acceso a la información para acelerar el flujo de trabajo
+. Como administrador, quiero poder acceder a la base de datos de los clientes para control
+. Como administrador, quiero que la apágina tenga varios idiomas para ampliar el rango de clientes
