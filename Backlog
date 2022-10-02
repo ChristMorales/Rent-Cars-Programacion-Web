@@ -11,7 +11,7 @@ Usuario Externo:
 . Como cliente externo, quiero ver opiniones de los usuarios para darme seguridad
 . Como cliente externo, quiero ver las opciones de autos diferenciados (precio, tipo, motivo) para darme seguridad
 
-Administrado:
+Administrador:
 . Como administrador, quiero ver el historial de alquileres, de manera detallada (cuando se realizo, cuáles son los pendientes) para llevar un control
 . Como administrador, quiero ver el stock de autos para llevar un control
 . Como administrador, quiero facilidad de acceso a la información para acelerar el flujo de trabajo
