@@ -264,6 +264,27 @@ hr {
   font-size: 35px;
 }
 
+/*Sucursales*/
+.Sucursal{
+  align-content: center;
+}
+.Sucursal img{
+  width: 220px;
+  height: 290px;
+  border-radius: 30px;
+}
+.Sucursalr.container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Sucursal p{
+  font-size: 19px;
+  ;
+}
+.Sucursal h2{
+  font-size: 30px; 
+}
 
 /*MOBIL*/
 @media (max-width: 700px) {
