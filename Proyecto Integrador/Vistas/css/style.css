@@ -241,6 +241,30 @@ hr {
   padding-bottom: 20px;
 }
 
+/*SERVICIOS*/
+.Alquiler img{
+  width: 400px;
+  height: 400px;
+  border-radius: 30px;
+}
+.Alquiler.container{
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.Alquiler p{
+  font-size: 19px;
+  ;
+}
+.Alquiler h3{
+  font-size: 25px;
+}
+.Alquiler h2{
+  font-size: 35px;
+}
+
+
 /*MOBIL*/
 @media (max-width: 700px) {
   .menu-btn {
