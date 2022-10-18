@@ -99,6 +99,7 @@ hr {
 .principal {
   width: 100%;
   height: 550px;
+
   background: url("/Proyecto Integrador/Vistas/Imagenes/principal.jpg") no-repeat
     center center/cover;
   display: flex;
@@ -155,7 +156,9 @@ hr {
 .nuestros-servicios {
   width: 100%;
   height: 350px;
+
   background: url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg") no-repeat
+
     center center/cover;
   margin-bottom: 40px;
 }
@@ -175,7 +178,9 @@ hr {
 .nuestros-servicios-two {
   width: 100%;
   height: 350px;
+
   background: url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg") no-repeat
+
     center center/cover;
 }
 
@@ -240,6 +245,7 @@ hr {
   font-size: 1rem;
   padding-bottom: 20px;
 }
+
 
 #nuestros-servicios{
   background-color: rgb(30,30,30);
@@ -328,6 +334,7 @@ hr {
   font-size: 30px; 
 }
 
+
 /*MOBIL*/
 @media (max-width: 700px) {
   .menu-btn {
@@ -383,7 +390,6 @@ hr {
     grid-template-columns: repeat(2, 1fr);
   }
 
-
 }
 
 @media (max-width: 500px) {
@@ -403,8 +409,6 @@ hr {
   .footer-links .footer-container ul {
     text-align: center;
   }
-
-  
 
 }
 #fondo {
