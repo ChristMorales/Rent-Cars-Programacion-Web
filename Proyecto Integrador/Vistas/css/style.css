@@ -260,14 +260,6 @@ hr {
   display: none;
 }
 
-.nuestros-servicios {
-  background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-  )
-  ,url("media/front-end.jpg");
-}
 #nuestros-servicios .carta{
   background-position: center center;
   background-size: contain;
@@ -391,72 +383,7 @@ hr {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  #nuestros-servicios .container{
-    padding: 50px 12px;
-  }
-  
-  #nuestros-servicios h2{
-    margin-top: 0;
-    font-size: 3.2em;
-  }
-  
-  #nuestros-servicios p{
-    display: none;
-  }
-  
-  .nuestros-servicios {
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("media/front-end.jpg");
-  }
-  #nuestros-servicios .carta{
-    background-position: center center;
-    background-size: contain;
-    padding: 50px 0px;
-    margin: 10px;
-    border-radius: 20px;
-  }
-  
-  .carta:first-child{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
-  
-  }
-  
-  .carta:nth-child(2){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
-  }
-  
-  .carta:nth-child(3){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
-  }
-  
-  
-  .carta:last-child{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
-  }
+
 }
 
 @media (max-width: 500px) {
