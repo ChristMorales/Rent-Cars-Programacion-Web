@@ -99,7 +99,8 @@ hr {
 .principal {
   width: 100%;
   height: 550px;
-  background: url("/Full-Stack-G4.0/Vistas/Imagenes/principal.jpg") no-repeat
+
+  background: url("/Proyecto Integrador/Vistas/Imagenes/principal.jpg") no-repeat
     center center/cover;
   display: flex;
   flex-direction: column;
@@ -155,7 +156,9 @@ hr {
 .nuestros-servicios {
   width: 100%;
   height: 350px;
-  background: url("/Full-Stack-G4.0/Vistas/Imagenes/encabezado3.jpg") no-repeat
+
+  background: url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg") no-repeat
+
     center center/cover;
   margin-bottom: 40px;
 }
@@ -175,7 +178,9 @@ hr {
 .nuestros-servicios-two {
   width: 100%;
   height: 350px;
-  background: url("/Full-Stack-G4.0/Vistas/Imagenes/servicio1.jpg") no-repeat
+
+  background: url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg") no-repeat
+
     center center/cover;
 }
 
@@ -241,6 +246,95 @@ hr {
   padding-bottom: 20px;
 }
 
+
+#nuestros-servicios{
+  background-color: rgb(30,30,30);
+  color: white;
+  text-align: center;
+}
+
+#nuestros-servicios .container{
+  padding: 50px 12px;
+}
+
+#nuestros-servicios h2{
+  margin-top: 0;
+  font-size: 3.2em;
+}
+
+#nuestros-servicios p{
+  display: none;
+}
+
+#nuestros-servicios .carta{
+  background-position: center center;
+  background-size: contain;
+  padding: 50px 0px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.carta:first-child{
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
+
+}
+
+.carta:nth-child(2){
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
+}
+
+.carta:nth-child(3){
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
+}
+
+
+.carta:last-child{
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
+}
+
+/*Sucursales*/
+.Sucursal{
+  align-content: center;
+}
+.Sucursal img{
+  width: 220px;
+  height: 290px;
+  border-radius: 30px;
+}
+.Sucursalr.container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Sucursal p{
+  font-size: 19px;
+  ;
+}
+.Sucursal h2{
+  font-size: 30px; 
+}
+
+
 /*MOBIL*/
 @media (max-width: 700px) {
   .menu-btn {
@@ -295,6 +389,7 @@ hr {
   .footer-links .footer-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media (max-width: 500px) {
@@ -314,6 +409,7 @@ hr {
   .footer-links .footer-container ul {
     text-align: center;
   }
+
 }
 #fondo {
   background: #19262f;
