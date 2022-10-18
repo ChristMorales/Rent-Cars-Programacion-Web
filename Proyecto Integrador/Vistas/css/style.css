@@ -241,27 +241,77 @@ hr {
   padding-bottom: 20px;
 }
 
-/*SERVICIOS*/
-.Alquiler img{
-  width: 400px;
-  height: 400px;
-  border-radius: 30px;
+#nuestros-servicios{
+  background-color: rgb(30,30,30);
+  color: white;
+  text-align: center;
 }
-.Alquiler.container{
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
+
+#nuestros-servicios .container{
+  padding: 50px 12px;
+}
+
+#nuestros-servicios h2{
+  margin-top: 0;
+  font-size: 3.2em;
+}
+
+#nuestros-servicios p{
+  display: none;
+}
+
+.nuestros-servicios {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("media/front-end.jpg");
+}
+#nuestros-servicios .carta{
+  background-position: center center;
+  background-size: contain;
+  padding: 50px 0px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.carta:first-child{
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
 
 }
-.Alquiler p{
-  font-size: 19px;
-  ;
+
+.carta:nth-child(2){
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
 }
-.Alquiler h3{
-  font-size: 25px;
+
+.carta:nth-child(3){
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
 }
-.Alquiler h2{
-  font-size: 35px;
+
+
+.carta:last-child{
+  background-image: linear-gradient(
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+  )
+  ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
 }
 
 /*Sucursales*/
@@ -340,6 +390,73 @@ hr {
   .footer-links .footer-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  #nuestros-servicios .container{
+    padding: 50px 12px;
+  }
+  
+  #nuestros-servicios h2{
+    margin-top: 0;
+    font-size: 3.2em;
+  }
+  
+  #nuestros-servicios p{
+    display: none;
+  }
+  
+  .nuestros-servicios {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/front-end.jpg");
+  }
+  #nuestros-servicios .carta{
+    background-position: center center;
+    background-size: contain;
+    padding: 50px 0px;
+    margin: 10px;
+    border-radius: 20px;
+  }
+  
+  .carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
+  
+  }
+  
+  .carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
+  }
+  
+  .carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
+  }
+  
+  
+  .carta:last-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg");
+  }
 }
 
 @media (max-width: 500px) {
@@ -359,6 +476,9 @@ hr {
   .footer-links .footer-container ul {
     text-align: center;
   }
+
+  
+
 }
 #fondo {
   background: #19262f;
