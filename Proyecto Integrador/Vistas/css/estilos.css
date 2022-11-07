@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
+    background-color: rgb(30, 30, 30)
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -20,6 +20,7 @@ main{
     margin: auto;
     margin-top: 100px;
 }
+
 
 .contenedor__todo{
     width: 100%;
