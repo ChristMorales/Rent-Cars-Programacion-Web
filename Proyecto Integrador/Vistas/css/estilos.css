@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url(/imagenes/encabezado3.jpg);
+    background-image: url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
