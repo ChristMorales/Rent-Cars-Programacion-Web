@@ -22,3 +22,9 @@ function comprobaremail(valor, campo) {
   
   email.addEventListener("invalid", comprobaremail);
   email.addEventListener("input", comprobaremail);
+
+var input = document.getElementById('pass');
+input.oninvalid = function(event) { event.target.setCustomValidity("Debe contener al menos un número y una letra mayúscula y minúscula, y entre 10 y 20 caracteres");
+
+}
+
