@@ -6,11 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>G4.0 | Alquileres</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script src="https://kit.fontawesome.com/41ab858822.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
@@ -51,66 +55,44 @@
     </nav>
     <hr>
 
-    <header class="principal">
-      <h2>Somos ¡G4.0!</h2>
-      <p>La agencia de alquileres de vehículos por excelencia. Seguridad, compromiso y calidad.</p>
-      <!-- <a href="#" class="btn">
-        Reserva Ya <i class="fas fa-chevron-right"></i>
-      </a> -->
-    </header>
+    <main>
 
-    <div class="nuestros-productos">
-      <div>
-        <img src="Imagenes/auto1.jpg" alt="" />
-        <h3>Sedan</h3>
-        <p>Vehículo de cuatro puertas ideal para viajar en familia y disfrutar de unas buenas vacaciones. Promete
-          espacio y buen andar.</p>
-        <a href="#">Reservar <i class="fas fa-angle-double-right"></i></a>
+      <div class="contenedor__todo">
+        <div class="caja__trasera">
+          <div class="caja__trasera-login">
+            <h3>¿Ya tienes una cuenta?</h3>
+            <p>Inicia sesión para entrar en la página</p>
+            <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+          </div>
+          <div class="caja__trasera-register">
+            <h3>¿Aún no tienes una cuenta?</h3>
+            <p>Regístrate para que puedas iniciar sesión</p>
+            <button id="btn__registrarse">Regístrarse</button>
+          </div>
+        </div>
+
+
+        <div class="contenedor__login-register">
+
+          <form action="" class="formulario__login">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" placeholder="Correo Electronico" id="email" required>
+            <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" required>
+            <button>Entrar</button>
+          </form>
+
+          <form action="" class="formulario__register">
+            <h2>Regístrarse</h2>
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="text" placeholder="Correo Electronico"  id="email2" required>
+            <input type="text" placeholder="Usuario" maxlength="16" minlength="8" required>
+            <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" id="pass"required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <button>Regístrarse</button>
+          </form>
+        </div>
       </div>
-      <div>
-        <img src="Imagenes/auto2.jpg" alt="" />
-        <h3>Deportivo</h3>
-        <p>Este súper deportivo te ofrece elegancia y adrenalina. Ideal para viaje de negocios o en pareja. Recomendable
-          para tramos cortos.</p>
-        <a href="#">Reservar <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      <div>
-        <img src="Imagenes/auto3.jpg" alt="" />
-        <h3>Familiar</h3>
-        <p>Vehículo ideal para viajes de larga distancia. Además de buen andar y contar con suficiente espacio, te
-          permite recorrer distintos tipos de caminos.</p>
-        <a href="#">Reservar <i class="fas fa-angle-double-right"></i></a>
-      </div>
-      <div>
-        <img src="Imagenes/auto4.jpg" alt="" />
-        <h3>Camioneta 4x4</h3>
-        <p>Si te gusta la aventura, recorrer caminos imposibles y descubrir rincones maravillosos, éste es tu vehículo
-          ideal. Fuerza, destreza y confianza.</p>
-        <a href="#">Reservar <i class="fas fa-angle-double-right"></i></a>
-      </div>
-    </div>
 
-
-    <section class="nuestros-servicios">
-      <div class="container">
-        <h2>Alquiler con Chofer</h2>
-
-        <p>Ofrecemos un servicio de alquiler con chofer. El mismo puede ser contratado por viaje, por hora o a convenir.</p>        
-        <a href="Servicios.html" class="btn">+ Info <i class="fas fa-chevron-right"></i></a>
-
-      </div>
-    </section>
-
-
-    <section class="nuestros-servicios-two">
-      <div class="container">
-        <h2>Alquiler sin Chofer</h2>
-        <p>Ofrecemos un servicio de alquiler sin chofer. Se puede contratar por tiempo limitado o ilimitado.</p>
-
-        <a href="Servicios.html" class="btn">+ Info <i class="fas fa-chevron-right"></i></a>
-
-      </div>
-    </section>
+    </main>
 
 
     <section class="social">
@@ -197,8 +179,9 @@
 
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="./js/main.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/swetalert.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/Valid-Formularios.js"></script>
+
 </body>
 
 </html>
