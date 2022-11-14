@@ -1,6 +1,5 @@
 import abm_usuarios as abm
 import alquilar_autos as alquilar
-import mysql.connector
 
 
 class Cliente():
@@ -15,6 +14,9 @@ class Cliente():
     def get_id (self):
         return abm.obtener_id(self.dni)
 
+    def get_alquiler(self):
+        alquilar.obtener_alquiler_cliente(self.get_id)
+
     def alta (self):
         abm.crear_usuario(self.dni, self.nombre, self.apellido, self.f_nac, self.email, self.contrasenia)
 
@@ -26,6 +28,14 @@ class Cliente():
 
     def alquilar_auto(self, autos, fecha_alquiler, fecha_devolucion, servicio, local):
         alquilar.alquilar_auto(self.get_id(), autos, fecha_alquiler, fecha_devolucion, servicio, local)
+        alquilar.actualizar_alquiler_auto(autos, self.get_alquiler)
+
+
+    def devolver_auto(self):
+        nro_alquiler = alquilar.obtener_alquiler_cliente(self.get_id)
+        auto =  alquilar.obtener_auto_alquiler(nro_alquiler)
+        alquilar.actualizar_alquiler_auto(auto, -1)
+        alquilar.cerrar_alquiler(nro_alquiler)      
 
     
 
@@ -40,10 +50,24 @@ class Autos():
     def get_id (self):
         alquilar.obtener_id (self.patente)
 
-    #def alquiler_en_curso (self):
+    def alquiler_en_curso (self): 
+        if alquilar.obtener_alquiler_auto > 0:
+            return alquilar.obtener_alquiler_auto
+        else:
+            return False
+
 
 
 cliente = Cliente(32426963, 'Christopher', 'Morales', "1987/03/22", 'cancheritos.me@gmail.com', 'admin')
 
+cliente.alta()
 cliente.baja()
+
+cliente2 = Cliente(336292138, "Maria", "Anders", "1988/09/18", 'marianders@gmail.com', '123456789')
+cliente2.alta()
+
+#autos_disponibles = alquilar.buscar_autos_disponibles()
+#for i in range (autos_disponibles.length):
+
+
 

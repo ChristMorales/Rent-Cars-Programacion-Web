@@ -106,7 +106,7 @@ try:
                                     Anio varchar (4) NOT NULL,
                                     Alquiler_en_curso int DEFAULT -1,
                                     Locale int,
-                                    FOREIGN KEY (Locale) REFERENCES Locales (ID_local)
+                                    FOREIGN KEY (Locale) REFERENCES Locales(ID_local)
                                 );
                                 '''
 
@@ -151,3 +151,4 @@ finally:
         cursor.close()
         connection.close()
         print("MySQL connection is closed")
+

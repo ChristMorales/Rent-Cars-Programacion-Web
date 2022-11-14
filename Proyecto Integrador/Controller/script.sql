@@ -42,4 +42,6 @@ CREATE TABLE Alquileres (
     Servicio varchar (255),
     Locale int,
     FOREIGN KEY (Locale) REFERENCES Locales (ID_local)
+    En_curso boolean DEFAULT TRUE
 );
+
