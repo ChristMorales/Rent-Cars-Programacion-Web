@@ -1,20 +1,25 @@
+from datetime import datetime
+
 import mysql.connector
 
-#Crear usuario, insertar datos en tabla
-def crear_usuario(dni, nombre, apellido, fecha_nac, email, contrasenia):
+def alquilar_auto(cliente, auto, fecha_alquiler, fecha_devolucion, servicio, local):
     try:
         connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
-        cursor = connection.cursor()
-        mySql_insert_query = '''INSERT INTO Clientes (Dni, Nombre, Apellido, Fecha_nac, Email, Contrasenia)
-                                VALUES (%s, %s, %s, %s, %s, %s) '''
+        mySql_insert_query = '''INSERT INTO productos (Cliente, Autos, Order_date, Fecha_alquiler, Fecha_devolucion, Servicio, Locale) 
+                                VALUES (%s, %s, %s, %s, %s, %s, %s) '''
 
-        record = (dni, nombre, apellido, fecha_nac, email, contrasenia)
-        cursor.execute(mySql_insert_query, record)
+        cursor = connection.cursor()
+        current_Date = datetime.now()
+        formatted_date = current_Date.strftime('%d-%m-%Y %H:%M:%S')
+        insert_tuple = (cliente, auto, formatted_date, fecha_alquiler, fecha_devolucion, servicio, local)
+
+        cursor.execute(mySql_insert_query, insert_tuple)
         connection.commit()
-        print("Cliente creado correctamente")
+        print("Reserva creada exitosamente")
 
     except mysql.connector.Error as error:
-        print("Fallo al crear cliente {}".format(error))
+        connection.rollback()
+        print("Error al crear la reserva {}".format(error))
 
     finally:
         if connection.is_connected():
@@ -22,62 +27,68 @@ def crear_usuario(dni, nombre, apellido, fecha_nac, email, contrasenia):
             connection.close()
             print("MySQL connection is closed")
 
-def eliminar_usuario(id):
-    try:
-        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
-
-        mySql_insert_query = "DELETE FROM Clientes WHERE Dni = %s;"         
-        cursor = connection.cursor()
-        cursor.execute(mySql_insert_query, (id,))
-        connection.commit()
-        print(cursor.rowcount, "Cliente borrado") 
-
-    except mysql.connector.Error as error:
-        print("Fallo al borrar cliente{}".format(error))
-
-    finally:
-        if connection.is_connected():
-            cursor.close()
-            connection.close()
-            print("MySQL connection is closed")
-
-def cambiar_contraseña(contrasenia, dni):
+def obtener_id(patente):
 
     try:
         connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
 
-        mySql_insert_query = " UPDATE Clientes SET Contrasenia = %s WHERE Dni = %s;"
+        mySql_query = " SELECT Id_auto FROM Autos WHERE Patente = %s;"
 
         
         cursor = connection.cursor()
-        cursor.execute(mySql_insert_query, contrasenia, dni)
-        connection.commit()
-        print(cursor.rowcount, "Contraseña modificada") 
-
-    except mysql.connector.Error as error:
-        print("Fallo al modificar contraseña {}".format(error))
-
-    finally:
-        if connection.is_connected():
-            cursor.close()
-            connection.close()
-            print("MySQL connection is closed")
-
-def obtener_id(dni):
-
-    try:
-        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
-
-        mySql_query = " SELECT Id_cliente FROM Clientes WHERE Dni = %s;"
-
-        
-        cursor = connection.cursor()
-        cursor.execute(mySql_query, dni)
+        cursor.execute(mySql_query, patente)
         connection.commit()
         rows=cursor.fetchall()
 
     except mysql.connector.Error as error:
         print("Fallo al buscar id {}".format(error))
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+            return rows
+
+def actualizar_alquiler_auto (id_auto, nro_nota):
+
+    try:
+        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
+
+        mySql_query = "UPDATE Autos SET Alquiler_en_curso = %s WHERE ID_auto = %s;"
+
+        
+        cursor = connection.cursor()
+        cursor.execute(mySql_query, nro_nota, id_auto)
+        connection.commit()
+        print(cursor.rowcount, "registro(s) actualizado") 
+
+    except mysql.connector.Error as error:
+        print("Fallo al actualizar alquiler {}".format(error))
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+
+#
+
+def obtener_alquiler(id_auto):
+
+    try:
+        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
+
+        mySql_query = "SELECT Alquiler_en_curso FROM Alquileres WHERE ID_auto= %s;"
+
+        
+        cursor = connection.cursor()
+        cursor.execute(mySql_query, id_auto)
+        connection.commit()
+        rows = cursor.fetchall()
+
+    except mysql.connector.Error as error:
+        print("Fallo al buscar alquiler {}".format(error))
 
     finally:
         if connection.is_connected():
