@@ -67,49 +67,6 @@ hr {
   margin: 10px 0;
 }
 
-.switch {
-  background: #343D5B;
-  border-radius: 1000px;
-  border: none;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  outline: none;
-}
-
-.switch::after {
-  content: "";
-  display: block;
-  width: 32px;
-  height: 30px;
-  position: absolute;
-  background: #F1F1F1;
-  top: 0;
-  left: 0;
-  right: unset;
-  border-radius: 100px;
-  transition: .3s ease all;
-  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.2);
-}
-
-.switch.active {
-  background: orange;
-  color: #000;
-}
-
-.switch.active::after {
-  right: 0;
-  left: unset;
-}
-
-.modo_oscuro {
-  width: 40px;
-  height: 30px;
-  line-height: 30px;
-  display: block;
-  background: none;
-  color: #fff;
-}
 
 /*RESPONSIVE BUTTON*/
 .menu-btn {
@@ -270,6 +227,54 @@ font-size: 18px;
   width: 50%;
   padding: 100px 0 0 30px;
 }
+
+
+/*INFORMACION ADICIONAL*/
+.info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(350px, 1fr));
+	grid-gap: 10px;
+	grid-auto-rows: 170px;
+	margin: 0 10px;
+	padding-bottom: 20px;
+}
+
+.info-item {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  float: left;
+  border: 3px solid #fff;
+}
+
+.info-item img {
+  width: 100%;
+	height: 100%;
+  object-fit: cover;
+}
+
+.adicional {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	transform: scale(0);
+	transition: .3s ease;
+}
+
+.info-item:hover .adicional {
+  transform: scale(1);
+}
+
+
 
 /*REDES SOCIALES*/
 .social {
