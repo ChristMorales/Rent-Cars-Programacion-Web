@@ -22,13 +22,13 @@ def crear_usuario(dni, nombre, apellido, fecha_nac, email, contrasenia):
             connection.close()
             print("MySQL connection is closed")
 
-def eliminar_usuario(id):
+def eliminar_usuario(dni):
     try:
         connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
 
         mySql_insert_query = "DELETE FROM Clientes WHERE Dni = %s;"         
         cursor = connection.cursor()
-        cursor.execute(mySql_insert_query, (id,))
+        cursor.execute(mySql_insert_query, (dni,))
         connection.commit()
         print(cursor.rowcount, "Cliente borrado") 
 
@@ -41,16 +41,17 @@ def eliminar_usuario(id):
             connection.close()
             print("MySQL connection is closed")
 
-def cambiar_contraseña(contrasenia, dni):
+def cambiar_contraseña(contrasenia, id):
 
     try:
         connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
 
-        mySql_insert_query = " UPDATE Clientes SET Contrasenia = %s WHERE Dni = %s;"
+        mySql_insert_query = " UPDATE Clientes SET Contrasenia = %s WHERE ID_cliente = %s;"
 
         
         cursor = connection.cursor()
-        cursor.execute(mySql_insert_query, contrasenia, dni)
+        result = (contrasenia, id)
+        cursor.execute(mySql_insert_query, result[0], result[1])
         connection.commit()
         print(cursor.rowcount, "Contraseña modificada") 
 
@@ -66,15 +67,16 @@ def cambiar_contraseña(contrasenia, dni):
 def obtener_id(dni):
 
     try:
-        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
+        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin', buffered = True)
 
-        mySql_query = " SELECT Id_cliente FROM Clientes WHERE Dni = %s;"
+        mySql_query = " SELECT Id_cliente FROM Clientes WHERE Dni = %s LIMIT 1;"
 
         
         cursor = connection.cursor()
-        cursor.execute(mySql_query, dni)
+        cursor.execute(mySql_query, (dni,))
         connection.commit()
         rows=cursor.fetchall()
+        return rows
 
     except mysql.connector.Error as error:
         print("Fallo al buscar id {}".format(error))
@@ -84,4 +86,4 @@ def obtener_id(dni):
             cursor.close()
             connection.close()
             print("MySQL connection is closed")
-            return rows
+

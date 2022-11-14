@@ -132,12 +132,12 @@ try:
                                     FOREIGN KEY (Cliente) REFERENCES Clientes (ID_cliente),
                                     Autos int,
                                     FOREIGN KEY (Autos) REFERENCES Autos (ID_auto),
-                                    Order_date date NOT NULL,
                                     Fecha_alquiler date,
                                     Fecha_devolucion date,
                                     Servicio varchar (255),
                                     Locale int,
-                                    FOREIGN KEY (Locale) REFERENCES Locales (ID_local)
+                                    FOREIGN KEY (Locale) REFERENCES Locales (ID_local),
+                                    En_curso boolean DEFAULT TRUE
                                 );
                                 '''
 

@@ -12,10 +12,14 @@ class Cliente():
         self.contrasenia = contrasenia
 
     def get_id (self):
-        return abm.obtener_id(self.dni)
+        id = abm.obtener_id(self.dni)
+        return id[0][0]
 
     def get_alquiler(self):
-        alquilar.obtener_alquiler_cliente(self.get_id)
+        id = self.get_id()
+        alquiler = alquilar.obtener_alquiler_cliente(id)
+        return alquiler[0][0]
+        
 
     def alta (self):
         abm.crear_usuario(self.dni, self.nombre, self.apellido, self.f_nac, self.email, self.contrasenia)
@@ -24,18 +28,23 @@ class Cliente():
         abm.eliminar_usuario(self.dni)
 
     def cambiar_contrasenia (self, nueva_contrasenia):
-        abm.cambiar_contraseña(self.dni, nueva_contrasenia)
+        id = self.get_id
+        abm.cambiar_contraseña(id, nueva_contrasenia)
 
     def alquilar_auto(self, autos, fecha_alquiler, fecha_devolucion, servicio, local):
-        alquilar.alquilar_auto(self.get_id(), autos, fecha_alquiler, fecha_devolucion, servicio, local)
-        alquilar.actualizar_alquiler_auto(autos, self.get_alquiler)
+        id = self.get_id()
+        alquilar.alquilar_auto(id, autos, fecha_alquiler, fecha_devolucion, servicio, local)
+        alquiler = self.get_alquiler()
+        alquilar.actualizar_alquiler_auto(alquiler, autos)
 
 
     def devolver_auto(self):
-        nro_alquiler = alquilar.obtener_alquiler_cliente(self.get_id)
-        auto =  alquilar.obtener_auto_alquiler(nro_alquiler)
-        alquilar.actualizar_alquiler_auto(auto, -1)
-        alquilar.cerrar_alquiler(nro_alquiler)      
+        id = self.get_id()
+        nro_alquiler = alquilar.obtener_alquiler_cliente(id)
+        auto =  alquilar.obtener_auto_alquiler(nro_alquiler[0][0])
+        alquilar.actualizar_alquiler_auto(-1, auto[0][0])
+        alquilar.cerrar_alquiler(nro_alquiler[0][0])  
+
 
     
 
@@ -48,7 +57,8 @@ class Autos():
         self.locale = locale
 
     def get_id (self):
-        alquilar.obtener_id (self.patente)
+        id = alquilar.obtener_id (self.patente)
+        return id[0][0]
 
     def alquiler_en_curso (self): 
         if alquilar.obtener_alquiler_auto > 0:
@@ -56,18 +66,21 @@ class Autos():
         else:
             return False
 
+    def __str__(self):
+        return f"{self.marca} {self.modelo}, año {self.anio}, patente {self.patente}"
+
+def consultar_autos_disponibles(int):
+    consulta_autos_disponibles = alquilar.buscar_autos_disponibles()
+    autos_disponibles = []
+    for auto in consulta_autos_disponibles:
+        auto_nuevo = Autos(auto[1], auto[2], auto[3], auto[4], auto[5])
+        autos_disponibles.append(auto_nuevo)
+
+    for auto in autos_disponibles:
+        print(f"Consulta N° {int} {auto}")
+    return autos_disponibles
 
 
-cliente = Cliente(32426963, 'Christopher', 'Morales', "1987/03/22", 'cancheritos.me@gmail.com', 'admin')
-
-cliente.alta()
-cliente.baja()
-
-cliente2 = Cliente(336292138, "Maria", "Anders", "1988/09/18", 'marianders@gmail.com', '123456789')
-cliente2.alta()
-
-#autos_disponibles = alquilar.buscar_autos_disponibles()
-#for i in range (autos_disponibles.length):
 
 
 

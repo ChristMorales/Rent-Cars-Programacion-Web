@@ -1,17 +1,13 @@
-from datetime import datetime
-
 import mysql.connector
 
 def alquilar_auto(cliente, auto, fecha_alquiler, fecha_devolucion, servicio, local):
     try:
         connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
-        mySql_insert_query = '''INSERT INTO Alquileres (Cliente, Autos, Order_date, Fecha_alquiler, Fecha_devolucion, Servicio, Locale) 
-                                VALUES (%s, %s, %s, %s, %s, %s, %s) '''
+        mySql_insert_query = '''INSERT INTO Alquileres (Cliente, Autos, Fecha_alquiler, Fecha_devolucion, Servicio, Locale) 
+                                VALUES (%s, %s, %s, %s, %s, %s) '''
 
         cursor = connection.cursor()
-        current_Date = datetime.now()
-        formatted_date = current_Date.strftime('%d-%m-%Y %H:%M:%S')
-        insert_tuple = (cliente, auto, formatted_date, fecha_alquiler, fecha_devolucion, servicio, local)
+        insert_tuple = (cliente, auto, fecha_alquiler, fecha_devolucion, servicio, local)
 
         cursor.execute(mySql_insert_query, insert_tuple)
         connection.commit()
@@ -30,27 +26,28 @@ def alquilar_auto(cliente, auto, fecha_alquiler, fecha_devolucion, servicio, loc
 def obtener_id(patente):
 
     try:
-        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
+        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin', buffered = True)
 
-        mySql_query = " SELECT Id_auto FROM Autos WHERE Patente = %s;"
+        mySql_query = " SELECT Id_auto FROM Autos WHERE Patente = %s LIMIT 1;"
 
         
         cursor = connection.cursor()
-        cursor.execute(mySql_query, patente)
+        cursor.execute(mySql_query, (patente,))
         connection.commit()
-        rows=cursor.fetchall()
-
+ 
+        rows = cursor.fetchall()
+        return rows
     except mysql.connector.Error as error:
-        print("Fallo al buscar id {}".format(error))
+        print("Fallo al buscar id patente {}".format(error))
 
     finally:
         if connection.is_connected():
             cursor.close()
             connection.close()
             print("MySQL connection is closed")
-            return rows
+            
 
-def actualizar_alquiler_auto (id_auto, nro_nota):
+def actualizar_alquiler_auto (nro_nota, id_auto):
 
     try:
         connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
@@ -59,7 +56,8 @@ def actualizar_alquiler_auto (id_auto, nro_nota):
 
         
         cursor = connection.cursor()
-        cursor.execute(mySql_query, nro_nota, id_auto)
+        result = (nro_nota, id_auto)
+        cursor.execute(mySql_query, result)
         connection.commit()
         print(cursor.rowcount, "registro(s) actualizado") 
 
@@ -77,9 +75,9 @@ def actualizar_alquiler_auto (id_auto, nro_nota):
 def obtener_alquiler_auto(id_auto):
 
     try:
-        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
+        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin', buffered=True)
 
-        mySql_query = "SELECT Nro_nota FROM Alquileres WHERE ID_auto= %s AND En_curso = TRUE;"
+        mySql_query = "SELECT Nro_nota FROM Alquileres WHERE ID_auto= %s AND En_curso = TRUE LIMIT 1;"
 
         
         cursor = connection.cursor()
@@ -100,15 +98,16 @@ def obtener_alquiler_auto(id_auto):
 def obtener_alquiler_cliente(id_cliente):
 
     try:
-        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
+        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin', buffered=True)
 
-        mySql_query = "SELECT Nro_nota FROM Alquileres WHERE ID_cliente = %s AND En_curso = TRUE;"
+        mySql_query = "SELECT Nro_nota FROM Alquileres WHERE Cliente = %s AND En_curso = TRUE LIMIT 1;"
 
         
         cursor = connection.cursor()
         cursor.execute(mySql_query, (id_cliente,))
         connection.commit()
-        rows = cursor.fetchall()
+        row = cursor.fetchall()
+        return row
 
     except mysql.connector.Error as error:
         print("Fallo al buscar alquiler {}".format(error))
@@ -118,20 +117,19 @@ def obtener_alquiler_cliente(id_cliente):
             cursor.close()
             connection.close()
             print("MySQL connection is closed")
-            return rows
+            
 
 def obtener_auto_alquiler(nro_nota):
     try:
-        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
+        connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin', buffered = True)
 
-        mySql_query = "SELECT Autos FROM Alquileres WHERE Nro_nota = %s AND En_curso = TRUE;"
+        mySql_query = "SELECT Autos FROM Alquileres WHERE Nro_nota = %s AND En_curso = TRUE LIMIT 1;"
 
         
         cursor = connection.cursor()
         cursor.execute(mySql_query, (nro_nota,))
         connection.commit()
         rows = cursor.fetchall()
-
     except mysql.connector.Error as error:
         print("Fallo al buscar alquiler {}".format(error))
 
@@ -147,7 +145,7 @@ def cerrar_alquiler (nro_nota):
     try:
         connection=mysql.connector.connect(host='localhost',database='rent_cars',user='root',password='admin')
 
-        mySql_query = "UPDATE Alquiler SET En_curso = FALSE WHERE Nro_nota = %s;"
+        mySql_query = "UPDATE Alquileres SET En_curso = FALSE WHERE Nro_nota = %s;"
 
         
         cursor = connection.cursor()
@@ -156,7 +154,7 @@ def cerrar_alquiler (nro_nota):
         print(cursor.rowcount, "registro(s) actualizado") 
 
     except mysql.connector.Error as error:
-        print("Fallo al actualizar alquiler {}".format(error))
+        print("Fallo al cerrar alquiler {}".format(error))
 
     finally:
         if connection.is_connected():
