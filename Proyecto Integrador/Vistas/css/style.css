@@ -144,7 +144,7 @@ hr {
   width: 100%;
   height: 550px;
 
-  background: url("/Proyecto Integrador/Vistas/Imagenes/principal.jpg") no-repeat
+  background: url("./Imagenes/principal.jpg") no-repeat
     center center/cover;
   display: flex;
   flex-direction: column;
@@ -239,7 +239,7 @@ font-size: 18px;
   width: 100%;
   height: 350px;
 
-  background: url("/Proyecto Integrador/Vistas/Imagenes/encabezado3.jpg") no-repeat
+  background: url("./Imagenes/encabezado3.jpg") no-repeat
 
     center center/cover;
   margin-bottom: 40px;
@@ -261,14 +261,14 @@ font-size: 18px;
   width: 100%;
   height: 350px;
 
-  background: url("/Proyecto Integrador/Vistas/Imagenes/servicio1.jpg") no-repeat
+  background: url("./Imagenes/servicio1.jpg") no-repeat
 
     center center/cover;
 }
 
 .nuestros-servicios-two .container {
-  width: 50%;
-  padding: 100px 0 0 30px;
+  width: 40%;
+  padding: 90px 0 0 30px;
 }
 
 /*REDES SOCIALES*/
@@ -342,18 +342,20 @@ font-size: 18px;
   }
 
   .nav-main ul.nav-menu {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #2f3640;
-    width: 50%;
-    height: 100%;
-    border-right: #ccc 1px solid;
-    opacity: 0.9;
-    padding: 30px;
-    transform: translateX(-500px);
-    transition: transform 0.5s ease-in-out;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #2f3640;
+      width: 50%;
+      height: 100%;
+      border-right: #ccc 1px solid;
+      opacity: 0.9;
+      padding: 30px;
+      transform: translateX(-500px);
+      transition: 0.5s;
+      transform: 0.5s ease-in-out;
+      z-index: 1;
   }
 
   .nav-main ul.nav-menu li {
