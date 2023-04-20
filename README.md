@@ -1,10 +1,22 @@
-# Full-Stack-G4.0
+Rent-Cars
+
+Rent Cars es un proyecto de empresa ficticia que ofrece alquileres de autos. 
+En ella podemos encontrar diversos servicios y una amplia variedad de autos a elección.
+Al proyecto iniciado en 2022 incorporaremos un módulo de e-commerce para comercializar sus productos y/o servicios online.
 
 ## Sprint 0
 
 Nos reunimos de forma virtual, pusimos en común conceptos e ideas acerca del proyecto.
-Rent-cars tendra una pagina web desde la cual se podran visualizar los servicios que tendremos disponibles, definiremos el alcance y las formas dentro de los proximos 7 dias.
-Posibles servicios:
+Rent-cars tiene una pagina web desde la cual se visualizan los servicios disponibles, 
+definiremos los roles de equipo y el repositorio a utilizar, revisaremos documentación IEEE830, 
+revisaremos la estructura web Semántica, responsive (RWD), definiremos requerimientos 
+para el nuevo módulo a desarrollar e-commerce (colocarlos en el Product Backlog del Project), 
+plantearemos Historias de Usuarios y Tareas dependientes de las US para incorporarlas en el 
+repositorio remoto GitHub. (Issues y Milestones), definiremos tareas dentro de 
+las Historias de Usuario (GITHUB) dentro de los proximos 7 dias.
+
+Servicios ofrecidos:
+
 1.  Alquiler de autos por tiempo limitado.
 2.  Alquiler de autos por tiempo indefinido.
 3.  Alquiler con chofer asignado.
@@ -12,8 +24,12 @@ Posibles servicios:
 5.  Alquiler de 4x4.
 6.  Seguros, asistencia al viajero, etc.
 
-Division de tareas:
-*  Augusto y Gonzalo se encargaran de definir las US, y formalizar los requerimientos.
-*  Juan se hara cargo de definir la idea del mapa del sitio.
-*  Christopher maneja el repositorio, Kanban y el formulario IEEE-830.
-*  Facundo no pudo estar presente, va a estar sumandose en alguna de las tareas, se estara definiendo en la semana.
+Integrantes del grupo:
+- Morales Christopher
+- Rener Jorge Facundo 
+- Olmedo Gonzalo Abel 
+- Senese Daiana 
+- Dizanzo Augusto 
+- Kranewitter Paulo Daniel 
+- Díaz Cecilia
+- Cordero Carioni Meulen
