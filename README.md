@@ -17,11 +17,11 @@ Seguros, asistencia al viajero, etc.
 
 **Integrantes del grupo:**
 
--Morales Christopher
--Rener Jorge Facundo
--Olmedo Gonzalo Abel
--Senese Daiana
--Dizanzo Augusto
--Kranewitter Paulo Daniel
--Díaz Cecilia
--Cordero Carioni Meulen </sub>
+* Morales Christopher
+* Rener Jorge Facundo
+* Olmedo Gonzalo Abel
+* Senese Daiana
+* Dizanzo Augusto
+* Kranewitter Paulo Daniel
+* Díaz Cecilia
+* Cordero Carioni Meulen </sub>
