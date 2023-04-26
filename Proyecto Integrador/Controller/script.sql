@@ -40,7 +40,7 @@ CREATE TABLE Alquileres (
     Fecha_devolucion date,
     Servicio varchar (255),
     Locale int,
-    FOREIGN KEY (Locale) REFERENCES Locales (ID_local)
+    FOREIGN KEY (Locale) REFERENCES Locales (ID_local),
     En_curso boolean DEFAULT TRUE
 );
 
