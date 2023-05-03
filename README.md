@@ -4,6 +4,7 @@
 
 Nos reunimos de forma virtual, pusimos en común conceptos e ideas acerca del proyecto.
 Rent-cars tendra una pagina web desde la cual se podran visualizar los servicios que tendremos disponibles, definiremos el alcance y las formas dentro de los proximos 7 dias.
+
 Posibles servicios:
 1.  Alquiler de autos por tiempo limitado.
 2.  Alquiler de autos por tiempo indefinido.
