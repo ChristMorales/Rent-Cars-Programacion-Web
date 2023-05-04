@@ -1,4 +1,4 @@
-Rent-Cars
+# Rent-Cars
 
 Rent Cars es un proyecto de empresa ficticia que ofrece alquileres de autos. En ella podemos encontrar diversos servicios y una amplia variedad de autos a elección. Al proyecto iniciado en 2022 incorporaremos un módulo de e-commerce para comercializar sus productos y/o servicios online.
 
@@ -8,7 +8,7 @@ Nos reunimos de forma virtual, pusimos en común conceptos e ideas acerca del pr
 
 Sprint 1
 
-Nos reunimos virtualmente, dividimos tareas de acuerdo a la disponibilidad de cada participante, debemos convertir los archivos .html del proyecto previo, en una SPA en Angular creando módulos y con sus components correspondientes e incorporar la navegabilidad de la aplicación mediante Routing con Angular. Con respecto al Backend debemos subir en la carpeta documentación las tablas actualizadas de la base de datos: DER, Diseño Lógico, Físico y Diagrama de Clases y Casos de Uso. Actualizaremos el documento IEEE830 y en la sección WIKI reflejaremos los avances individuales y de equipo en relación a Scrum. 
+Nos reunimos virtualmente, dividimos tareas de acuerdo a la disponibilidad de cada participante, debemos convertir los archivos .html del proyecto previo, en una SPA en Angular creando módulos y con sus components correspondientes e incorporar la navegabilidad de la aplicación mediante Routing con Angular. Con respecto al Backend debemos subir en la carpeta documentación las tablas actualizadas de la base de datos: DER, Diseño Lógico, Físico y Diagrama de Clases y Casos de Uso. Actualizaremos el documento IEEE830 y en la sección WIKI reflejaremos los avances individuales y de equipo en relación a Scrum.
 
 Servicios ofrecidos:
 
