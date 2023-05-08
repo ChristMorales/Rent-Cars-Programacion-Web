@@ -1,6 +1,6 @@
-CREATE DATABASE rent_cars;
+CREATE DATABASE rent_cars_web;
 
-USE rent_cars;
+USE rent_cars_web;
 
 CREATE TABLE Clientes (
     ID_cliente int PRIMARY KEY auto_increment,
@@ -29,6 +29,10 @@ CREATE TABLE Autos (
     FOREIGN KEY (Locale) REFERENCES Locales (ID_local)
 );
 
+CREATE TABLE Servicios (
+    ID_servicio int PRIMARY KEY auto_increment,
+    Descripcion varchar (255),
+);
 
 CREATE TABLE Alquileres (
     Nro_nota int PRIMARY KEY auto_increment,
@@ -38,9 +42,12 @@ CREATE TABLE Alquileres (
     FOREIGN KEY (Autos) REFERENCES Autos (ID_auto),
     Fecha_alquiler date,
     Fecha_devolucion date,
-    Servicio varchar (255),
+    Servicio int,
+    FOREIGN KEY (Servicios) REFERENCES Servicios (ID_servicio),
     Locale int,
     FOREIGN KEY (Locale) REFERENCES Locales (ID_local)
-    En_curso boolean DEFAULT TRUE
+    En_curso boolean DEFAULT FALSE
 );
+
+
 
