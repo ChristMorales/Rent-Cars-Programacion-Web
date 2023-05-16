@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Oswald", sans-serif;
+    background-color: rgb(30, 30, 30);
+    color: #1e272e;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+  }

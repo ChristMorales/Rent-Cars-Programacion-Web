@@ -5,11 +5,9 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
 import { InformacionComponent } from './informacion/informacion.component';
-import { PrincipalComponent } from './principal/principal.component';
 import { ProductosComponent } from './productos/productos.component';
-import { ClsComponent } from './cls/cls.component';
-
-
+import { UsuariosComponent } from './usuarios/usuarios.component';
+UsuariosComponent
 
 @NgModule({
   declarations: [
@@ -18,12 +16,20 @@ import { ClsComponent } from './cls/cls.component';
     ServiciosComponent,
     SucursalesComponent,
     InformacionComponent,
-    PrincipalComponent,
     ProductosComponent,
-    ClsComponent
+    UsuariosComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    ContactoComponent,
+    NosotrosComponent,
+    ServiciosComponent,
+    SucursalesComponent,
+    InformacionComponent,
+    ProductosComponent,
+    UsuariosComponent
   ]
 })
 export class PagesPaginasModule { }
