@@ -27,7 +27,7 @@ import { ProductosComponent } from './productos/productos.component';
 
   imports: [
     CommonModule
-  ]
+  ],
 
   exports: [
     PrincipalComponent, IniciarSesionComponent, ContactoComponent, NosotrosComponent, RegistroComponent, InformacionComponent, SucursalesComponent, ServiciosComponent, ProductosComponent,
