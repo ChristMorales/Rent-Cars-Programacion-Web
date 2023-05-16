@@ -1,0 +1,49 @@
+{
+  "productos": [
+   {
+      "id": 1,
+      "name": "sedan",
+      "price": "5000",
+      "description": "auto sedan",
+      "categoryId": 1
+  },
+
+  {
+      "id": 2,
+      "name": "deportivo",
+      "price": "7000",
+      "description": "auto deportivo",
+      "categoryId": 1
+  },
+
+  {
+      "id": 3,
+      "name": "familiar",
+      "price": "10.000",
+      "description": "camioneta familiar",
+      "categoryId": 2
+  },
+
+  {
+      "id": 4,
+      "name": "4x4",
+      "price": "15.000",
+      "description": "camioneta 4x4",
+      "categoryId": 2
+  }
+ ],
+
+ "categories": [
+   { 
+      "id": "1",
+      "name": "autos",
+      "description": "sedan, deportivo"
+  },
+
+  { 
+      "id": "2",
+      "name": "camionetas",
+      "description": "familiar, 4x4"
+  }
+ ]
+}

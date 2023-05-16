@@ -18,7 +18,7 @@ import { PagesModule } from './pages/pages.module';
     AppRoutingModule,
 
     LayoutModule,
-    PagesModule
+    PagesModule,
   ],
 
   providers: [],
