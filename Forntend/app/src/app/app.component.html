@@ -1,17 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<header>
-    <app-nav-navegacion></app-nav-navegacion>
-    <router-outlet></router-outlet>
-</header>
 <body>
-    <app-footer-piepagina></app-footer-piepagina>
-</body>
-</html>
 
+  <div class="menu-btn">
+    <i class="fas fa-bars fa-2x"></i>
+  </div>
+
+  <div class="container">
+    
+    <app-nav-navegacion></app-nav-navegacion>  
+    
+    <hr>
+
+    <header class="principal">
+        <h2>Somos ¡G4.0!</h2>
+        <p>La agencia de alquileres de vehículos por excelencia. Seguridad, compromiso y calidad.</p>
+    </header>
+      
+    <app-usuarios></app-usuarios> <!--usuario: -Productos -servicio-->
+          
+    <app-paginas-sociales></app-paginas-sociales> <!--Link paginas sociales-->
+
+  </div>
+  
+  <app-footer-piepagina></app-footer-piepagina>  <!--footer-->
+   
+  
+  
+    
+  
+  
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/swetalert.js"></script>
+  </body>
+  <router-outlet></router-outlet>

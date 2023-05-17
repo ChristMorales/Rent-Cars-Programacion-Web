@@ -7,6 +7,12 @@ import { ProductosComponent } from './pages-paginas/productos/productos.componen
 import { ServiciosComponent } from './pages-paginas/servicios/servicios.component';
 import { SucursalesComponent } from './pages-paginas/sucursales/sucursales.component';
 import { UsuariosComponent } from './pages-paginas/usuarios/usuarios.component';
+import { IniciarSesionComponent } from './auth-autentificacion/iniciar-sesion/iniciar-sesion.component';
+import { RegistrarseComponent } from './auth-autentificacion/registrarse/registrarse.component';
+import { RegistroProfesionalesComponent } from './pages-paginas/registro-profesionales/registro-profesionales.component';
+RegistroProfesionalesComponent
+RegistrarseComponent
+IniciarSesionComponent
 UsuariosComponent
 SucursalesComponent
 ServiciosComponent
@@ -22,6 +28,9 @@ const routes: Routes = [
   {path: 'servicios', component:ServiciosComponent},
   {path: 'sucursales', component:SucursalesComponent},
   {path: 'usuarios', component:SucursalesComponent},
+  {path: 'iniciarSesion', component:IniciarSesionComponent},
+  {path: 'registrarse', component:RegistrarseComponent},
+  {path: 'registroProfesionales', component:RegistroProfesionalesComponent},
   {path: '', redirectTo: './app.component', pathMatch: 'full'}
 ]
 

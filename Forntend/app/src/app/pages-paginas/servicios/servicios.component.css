@@ -1,0 +1,36 @@
+/*NUESTROS SERVICIOS*/
+.nuestros-servicios {
+    width: 100%;
+    height: 350px;
+  
+    background: url("../../../assets/images/encabezado3.jpg") no-repeat
+  
+      center center/cover;
+    margin-bottom: 40px;
+  }
+  
+  .nuestros-servicios .container {
+    width: 40%;
+    padding: 90px 0 0 30px;
+    color: #fff;
+  }
+  
+  .nuestros-servicios p,
+  .nuestros-servicios-two p {
+    margin: 10px 0 20px 0;
+  }
+  
+  /*NUESTROS SERVICIOS-TWO*/
+  .nuestros-servicios-two {
+    width: 100%;
+    height: 350px;
+  
+    background: url("../../../assets/images/servicio1.jpg") no-repeat
+  
+      center center/cover;
+  }
+  
+  .nuestros-servicios-two .container {
+    width: 40%;
+    padding: 100px 0 0 30px;
+  }

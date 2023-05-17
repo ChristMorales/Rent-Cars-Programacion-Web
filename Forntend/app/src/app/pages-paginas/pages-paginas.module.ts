@@ -7,6 +7,12 @@ import { SucursalesComponent } from './sucursales/sucursales.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { ProductosComponent } from './productos/productos.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { AuthAutentificacionModule } from '../auth-autentificacion/auth-autentificacion.module';
+import { AppRoutingModule } from '../app-routing.module';
+import { RegistroProfesionalesComponent } from './registro-profesionales/registro-profesionales.component';
+RegistroProfesionalesComponent
+AppRoutingModule
+AuthAutentificacionModule
 UsuariosComponent
 
 @NgModule({
@@ -17,10 +23,13 @@ UsuariosComponent
     SucursalesComponent,
     InformacionComponent,
     ProductosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    RegistroProfesionalesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AuthAutentificacionModule,
+    AppRoutingModule
   ],
   exports:[
     ContactoComponent,
@@ -29,7 +38,8 @@ UsuariosComponent
     SucursalesComponent,
     InformacionComponent,
     ProductosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    RegistroProfesionalesComponent
   ]
 })
 export class PagesPaginasModule { }

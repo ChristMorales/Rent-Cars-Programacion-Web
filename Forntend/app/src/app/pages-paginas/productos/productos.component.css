@@ -1,0 +1,25 @@
+/*NUESTROS PRODUCTOS*/
+.nuestros-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 70px 0;
+  }
+  
+  .nuestros-productos img {
+    width: 100%;
+    height: 180px;
+  }
+  
+  .nuestros-productos h3 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  
+  .nuestros-productos a {
+    padding: 10px 0;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+  }
