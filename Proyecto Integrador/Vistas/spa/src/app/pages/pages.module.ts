@@ -9,8 +9,9 @@ import { InformacionComponent } from './informacion/informacion.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
-
-
+import { CompraComponent } from './compra/compra.component';
+ServiciosComponent
+CompraComponent
 
 @NgModule({
   declarations: [
@@ -22,15 +23,25 @@ import { ProductosComponent } from './productos/productos.component';
     InformacionComponent,
     SucursalesComponent,
     ServiciosComponent,
+    CompraComponent,
     ProductosComponent
   ],
 
   imports: [
     CommonModule
-  ]
+  ],
 
   exports: [
-    PrincipalComponent, IniciarSesionComponent, ContactoComponent, NosotrosComponent, RegistroComponent, InformacionComponent, SucursalesComponent, ServiciosComponent, ProductosComponent,
+    PrincipalComponent, 
+    IniciarSesionComponent, 
+    ContactoComponent, 
+    NosotrosComponent, 
+    RegistroComponent, 
+    InformacionComponent,
+    SucursalesComponent, 
+    ServiciosComponent,
+   ProductosComponent,
+   CompraComponent
   ]
   
 })
