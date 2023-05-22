@@ -34,3 +34,14 @@
     width: 40%;
     padding: 100px 0 0 30px;
   }
+
+  .nuestros-servicios .container,
+  .nuestros-servicios-two .container {
+    width: 80%;
+  }
+
+  .nuestros-servicios .container,
+  .nuestros-servicios-two .container {
+    width: 100%;
+    padding: 60px 20px;
+  }

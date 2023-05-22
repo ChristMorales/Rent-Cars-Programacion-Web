@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { AppRoutingModuleTsModule } from '../app-routing.module.ts.module';
+AppRoutingModuleTsModule
 @NgModule({
   declarations: [
     FooterComponent,
@@ -12,7 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModuleTsModule
   ],
   exports: [
     FooterComponent,
