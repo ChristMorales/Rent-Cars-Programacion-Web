@@ -11,7 +11,10 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SucursalesComponent } from './pages/sucursales/sucursales.component';
-
+import { LoginComponent } from './auth/login/login.component';
+import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
+RegistrarseComponent
+LoginComponent
 RouterModule
 SucursalesComponent
 ServiciosComponent
@@ -34,6 +37,8 @@ const routes: Routes = [
   {path: 'registro', component:RegistroComponent},
   {path: 'servicios', component:ServiciosComponent},
   {path: 'sucursales', component:SucursalesComponent},
+  {path: 'login', component:LoginComponent},
+  {path: 'registrarse', component:RegistrarseComponent},
   {path: '', redirectTo: './app.component', pathMatch: 'full'}
 ]
 

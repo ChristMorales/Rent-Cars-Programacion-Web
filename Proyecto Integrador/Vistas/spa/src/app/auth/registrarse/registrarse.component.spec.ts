@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IniciarSesionComponent } from './iniciar-sesion.component';
+import { RegistrarseComponent } from './registrarse.component';
 
-describe('IniciarSesionComponent', () => {
-  let component: IniciarSesionComponent;
-  let fixture: ComponentFixture<IniciarSesionComponent>;
+describe('RegistrarseComponent', () => {
+  let component: RegistrarseComponent;
+  let fixture: ComponentFixture<RegistrarseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IniciarSesionComponent ]
+      declarations: [ RegistrarseComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(IniciarSesionComponent);
+    fixture = TestBed.createComponent(RegistrarseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,4 +21,3 @@ describe('IniciarSesionComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-

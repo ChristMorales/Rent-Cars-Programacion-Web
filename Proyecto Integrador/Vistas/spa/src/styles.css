@@ -8,7 +8,6 @@
 body {
   font-family: "Oswald", sans-serif;
   background-color: rgb(30, 30, 30);
-  color: #1e272e;
   color: #fff;
   font-size: 16px;
 }
@@ -22,99 +21,30 @@ ul {
   list-style: none;
 }
 
-.container {
-  width: 90%;
-  margin: auto;
-}
-
 hr {
   margin: 10px 0;
 }
 
-
-
 .adicional {
   position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    transform: scale(0);
-    transition: .3s ease;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  transform: scale(0);
+  transition: 0.3s ease;
 }
 
 .info-item:hover .adicional {
   transform: scale(1);
 }
 
-
-
-/*REDES SOCIALES*/
-.social {
-  margin: 50px;
-}
-.social p {
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.links a {
-  margin: 0 30px;
-}
-
-.links a i {
-  font-size: 3rem;
-}
-
-/*LINKS*/
-.footer-links {
-  background: #2f3640;
-  color: #616161;
-  font-size: 12px;
-  padding: 35px 0;
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.footer-container ul {
-  margin: 0 auto;
-}
-
-.footer-links li {
-  line-height: 2.8;
-}
-
-.footer {
-  background: #2f3640;
-  color: #616161;
-  font-size: 12px;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 1rem;
-  padding-bottom: 20px;
-}
-
-
-
-
-/*MOBIL*/
+/* MOBIL */
 @media (max-width: 700px) {
   .menu-btn {
     display: block;
@@ -145,6 +75,7 @@ hr {
     border-bottom: #ccc solid 1px;
     font-size: 14px;
   }
+
   .nav-main ul.nav-menu li:last-child {
     border-bottom: 0;
   }
@@ -169,15 +100,16 @@ hr {
   .footer-links .footer-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .nuestras-sucursales {
     grid-template-columns: repeat(1, 1fr);
     gap: 25px;
     margin: 70px 0;
   }
+
   .nuestras-sucursales p {
     display: none;
   }
-  
 }
 
 @media (max-width: 500px) {
@@ -190,6 +122,7 @@ hr {
     width: 100%;
     padding: 60px 20px;
   }
+
   .footer-links .footer-container {
     grid-template-columns: 1fr;
   }
@@ -197,13 +130,12 @@ hr {
   .footer-links .footer-container ul {
     text-align: center;
   }
-
 }
+
 #fondo {
   background: #19262f;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  opacity: 91%;
+  opacity: 0.91;
 }
-  

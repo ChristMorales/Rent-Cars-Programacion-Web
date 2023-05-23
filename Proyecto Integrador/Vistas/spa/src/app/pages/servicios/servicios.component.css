@@ -1,47 +1,25 @@
-/*NUESTROS SERVICIOS*/
-.nuestros-servicios {
-    width: 100%;
-    height: 350px;
-  
-    background: url("../../../assets/Imagenes/encabezado3.jpg") no-repeat
-  
-      center center/cover;
-    margin-bottom: 40px;
-  }
-  
-  .nuestros-servicios .container {
-    width: 40%;
-    padding: 90px 0 0 30px;
-    color: #fff;
-  }
-  
-  .nuestros-servicios p,
-  .nuestros-servicios-two p {
-    margin: 10px 0 20px 0;
-  }
-  
-  /*NUESTROS SERVICIOS-TWO*/
-  .nuestros-servicios-two {
-    width: 100%;
-    height: 350px;
-  
-    background: url("../../../assets/Imagenes/servicio1.jpg") no-repeat
-  
-      center center/cover;
-  }
-  
-  .nuestros-servicios-two .container {
-    width: 40%;
-    padding: 100px 0 0 30px;
-  }
 
-  .nuestros-servicios .container,
-  .nuestros-servicios-two .container {
-    width: 80%;
-  }
+.nuestrosServicios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin: 70px 0;
+}
 
-  .nuestros-servicios .container,
-  .nuestros-servicios-two .container {
-    width: 100%;
-    padding: 60px 20px;
-  }
+.nuestrosServicios img {
+  width: 50%;
+  height: 180px;
+}
+
+.nuestrosServicios h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.nuestrosServicios a {
+  padding: 10px 0;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: bold;
+}

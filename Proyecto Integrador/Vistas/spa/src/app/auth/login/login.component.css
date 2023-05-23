@@ -1,0 +1,48 @@
+
+.formulario__login {
+    opacity: 1;
+    display: block;
+  }
+  
+  form {
+    width: 30%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+  }
+  
+  form h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #46A2FD;
+  }
+  
+  form input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  form button {
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #46A2FD;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+  }
+  
+  @media screen and (max-width: 850px) {
+    form {
+      position: relative;
+    }
+  }

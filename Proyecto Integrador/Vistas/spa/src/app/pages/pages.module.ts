@@ -12,6 +12,8 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CompraComponent } from './compra/compra.component';
 import { AppRoutingModuleTsModule } from '../app-routing.module.ts.module';
+import { AuthModule } from '../auth/auth.module';
+AuthModule
 AppRoutingModuleTsModule
 LayoutModule
 ServiciosComponent
@@ -34,7 +36,8 @@ CompraComponent
   imports: [
     CommonModule,
     LayoutModule,
-    AppRoutingModuleTsModule
+    AppRoutingModuleTsModule,
+    AuthModule 
   ],
 
   exports: [
@@ -47,7 +50,8 @@ CompraComponent
     SucursalesComponent, 
     ServiciosComponent,
     ProductosComponent,
-    CompraComponent 
+    CompraComponent
+   
   ]
   
 })

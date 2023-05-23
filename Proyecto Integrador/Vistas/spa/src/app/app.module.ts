@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModuleTsModule } from './app-routing.module.ts.module';
+import { AuthModule } from './auth/auth.module';
+AuthModule
 AppRoutingModuleTsModule
 LayoutModule
 PagesModule
@@ -17,7 +19,8 @@ PagesModule
     BrowserModule,
     PagesModule,
     LayoutModule,
-    AppRoutingModuleTsModule
+    AppRoutingModuleTsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
