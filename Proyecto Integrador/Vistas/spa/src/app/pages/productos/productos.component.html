@@ -1,4 +1,5 @@
 <div class="nuestros-productos">
+  
   <div>
     <img src="../../../assets/Imagenes/auto1.jpg" alt="" />
     <h3>Sedan</h3>
@@ -25,10 +26,24 @@
 
   <div>
     <img src="../../../assets/Imagenes/auto4.jpg" alt="" />
-    <h3>Camioneta 4x4</h3>
+    <h3>test </h3>
     <p>Si te gusta la aventura, recorrer caminos imposibles y descubrir rincones maravillosos, éste es tu vehículo
       ideal. Fuerza, destreza y confianza.</p>
     <a href="#">Reservar <i class="fas fa-angle-double-right"></i></a>
   </div>
 
 </div>
+
+<div
+  *ngFor="let auto of productosA">
+</div>
+
+<ng-template ngFor let-auto [ngForOf]="productosA">
+  <div>
+    <img [src] = auto.imagen alt=""/>
+    <h3>{{ auto.marca }} </h3>
+    <p>{{ auto.modelo }}</p>
+    <p>{{ auto.anio }}</p>
+    <a href="#">Reservar <i class="fas fa-angle-double-right"></i></a>
+  </div>
+</ng-template>
