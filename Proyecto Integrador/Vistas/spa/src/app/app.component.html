@@ -1,7 +1,61 @@
-<div class="menu-btn">
+<!--div class="menu-btn">
     <i class="fas fa-bars fa-2x"></i>
-</div>
-<app-principal></app-principal>
-<router-outlet></router-outlet>
+</div-->
+
+<div class="container">
+
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    
+    <hr>
+  
+    <app-header></app-header>
+  
+    <!--app-productos></app-productos-->
+  
+    <section class="nuestros-servicios">
+      <div class="container">
+        <h2>Alquiler con Chofer</h2>
+        <p>Ofrecemos un servicio de alquiler con chofer. El mismo puede ser contratado por viaje, por hora o a convenir.</p>        
+        <a routerLink="servicios" class="btn">+ Info <i class="fas fa-chevron-right"></i></a>
+      </div>
+    </section>
+  
+    <section class="nuestros-servicios-two">
+      <div class="container">
+        <h2>Alquiler sin Chofer</h2>
+        <p>Ofrecemos un servicio de alquiler sin chofer. Se puede contratar por tiempo limitado o ilimitado.</p>
+  
+        <a routerLink="servicios" class="btn">+ Info <i class="fas fa-chevron-right"></i></a>
+      </div>
+    </section>
+  
+    <section class="social">
+  
+      <p>Nuestras Redes</p>
+  
+      <div class="links">
+  
+        <a href="https://facebook.com">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+  
+        <a href="https://twitter.com">
+          <i class="fab fa-twitter"></i>
+        </a>
+  
+        <a href="https://linkdin.com">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        
+      </div>
+  
+    </section>
+  
+    <app-footer> </app-footer> 
+  
+  </div>
+  
+
 
 

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { LayoutModule } from '../layout/layout.module';
 import { CommonModule } from '@angular/common';
-import { PrincipalComponent } from './principal/principal.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
@@ -21,7 +20,6 @@ CompraComponent
 
 @NgModule({
   declarations: [
-    PrincipalComponent,
     IniciarSesionComponent,
     ContactoComponent,
     NosotrosComponent,
@@ -41,7 +39,6 @@ CompraComponent
   ],
 
   exports: [
-    PrincipalComponent, 
     IniciarSesionComponent, 
     ContactoComponent, 
     NosotrosComponent, 
