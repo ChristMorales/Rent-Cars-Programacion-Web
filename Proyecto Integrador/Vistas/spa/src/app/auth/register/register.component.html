@@ -1,20 +1,45 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-    <div>
-      <label>Nombre de usuario:</label>
-      <input type="text" formControlName="username" required>
-      <div *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
-        <span *ngIf="registerForm.get('username').errors.required">El nombre de usuario es requerido.</span>
-      </div>
+<form [formGroup]="registerForm" (ngSubmit)="register()" class="formulario__registro">
+  <div>
+    <label>Nombre</label>
+    <input type="text" formControlName="firstName" required>
+    <div *ngIf="registerForm.get('firstName').invalid && registerForm.get('firstName').touched">
+      <span *ngIf="registerForm.get('firstName').errors.required">El nombre es requerido.</span>
     </div>
-    
-    <div>
-      <label>Contraseña:</label>
-      <input type="password" formControlName="password" required>
-      <div *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">
-        <span *ngIf="registerForm.get('password').errors.required">La contraseña es requerida.</span>
-      </div>
+  </div>
+
+  <div>
+    <label>Apellido</label>
+    <input type="text" formControlName="lastName" required>
+    <div *ngIf="registerForm.get('lastName').invalid && registerForm.get('lastName').touched">
+      <span *ngIf="registerForm.get('lastName').errors.required">El apellido es requerido.</span>
     </div>
-  
-    <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
-  </form>
-  
+  </div>
+
+  <div>
+    <label>Correo Electrónico</label>
+    <input type="email" formControlName="email" required>
+    <div *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">
+      <span *ngIf="registerForm.get('email').errors.required">El correo electrónico es requerido.</span>
+      <span *ngIf="registerForm.get('email').errors.email">El correo electrónico no es válido.</span>
+    </div>
+  </div>
+
+  <div>
+    <label>Contraseña</label>
+    <input type="password" formControlName="password" required>
+    <div *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">
+      <span *ngIf="registerForm.get('password').errors.required">La contraseña es requerida.</span>
+      <span *ngIf="registerForm.get('password').errors.minlength">La contraseña debe tener al menos 6 caracteres.</span>
+    </div>
+  </div>
+
+  <div>
+    <label>Confirmar Contraseña</label>
+    <input type="password" formControlName="confirmPassword" required>
+    <div *ngIf="registerForm.get('confirmPassword').invalid && registerForm.get('confirmPassword').touched">
+      <span *ngIf="registerForm.get('confirmPassword').errors.required">Debes confirmar la contraseña.</span>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+</form>
