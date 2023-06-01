@@ -1,6 +1,20 @@
-<form action="" class="formulario__login" >
-    <h2>Iniciar Sesión</h2>
-    <input type="text" placeholder="Correo Electrónico" id="email" required>
-    <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" required>
-    <button>Entrar</button>
-</form>
+<form [formGroup]="loginForm" (ngSubmit)="login()"  class="formulario__login">
+    <div>
+      <label>Correo Electrónico</label>
+      <input type="text" formControlName="username" required>
+      <div *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched">
+        <span *ngIf="loginForm.get('username').errors.required">El nombre de usuario es requerido.</span>
+      </div>
+    </div>
+    
+    <div>
+      <label>Contraseña</label>
+      <input type="password" formControlName="password" required>
+      <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+        <span *ngIf="loginForm.get('password').errors.required">La contraseña es requerida.</span>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+  </form>
+  

@@ -1,0 +1,20 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div>
+      <label>Nombre de usuario:</label>
+      <input type="text" formControlName="username" required>
+      <div *ngIf="registerForm.get('username').invalid && registerForm.get('username').touched">
+        <span *ngIf="registerForm.get('username').errors.required">El nombre de usuario es requerido.</span>
+      </div>
+    </div>
+    
+    <div>
+      <label>Contraseña:</label>
+      <input type="password" formControlName="password" required>
+      <div *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched">
+        <span *ngIf="registerForm.get('password').errors.required">La contraseña es requerida.</span>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+  </form>
+  
