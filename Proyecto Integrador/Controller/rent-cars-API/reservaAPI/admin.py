@@ -1,5 +1,8 @@
 from django.contrib import admin
+#checar lo siguiente:
+from django.contrib.auth import get_user_model
 from .models import Clientes, Locales, Autos, Alquileres
+
 
 
 class ClientesAdmin(admin.ModelAdmin):
@@ -15,3 +18,6 @@ admin.site.register(Clientes, ClientesAdmin)
 admin.site.register(Locales, LocalesAdmin)
 admin.site.register(Autos, AutosAdmin)
 admin.site.register(Alquileres, AlquileresAdmin)
+@admin.register(get_user_model())
+class CustomUserAdmin(UserAdmin):
+    pass
