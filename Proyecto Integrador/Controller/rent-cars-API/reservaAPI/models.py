@@ -2,18 +2,15 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
+    '''extiende de CustomUser'''
+    ID_cliente = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=150, unique=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'password']
-    
-
-class Clientes(models.Model):
-    ID_cliente = models.AutoField(primary_key=True)
     dni = models.TextField(max_length=12, blank=False)
     nombre = models.CharField(max_length=100, blank=False)
     apellido = models.CharField(max_length=100, blank=False)
     fecha_nac = models.DateField(blank=False) # ver parametros
-    email = models.CharField(max_length=100, blank=False)
     class Meta:
         db_table = "cliente"
         verbose_name = "Cliente registrado"
@@ -22,8 +19,7 @@ class Clientes(models.Model):
         return self.nombre
     def __str__(self):
         return self.nombre
-    
-    
+
 class Locales(models.Model):
     ID_local = models.AutoField(primary_key=True)
     nombre_local = models.CharField(max_length=120, blank=False)
@@ -64,7 +60,7 @@ class Alquileres(models.Model):
     fecha_devolucion = models.DateField()
     servicio = models.CharField(max_length=100, blank=False)
     ID_local = models.ForeignKey(Locales, to_field="ID_local", on_delete=models.CASCADE)
-    en_curso = models.BooleanField(default=True)
+    en_curso = models.BooleanField(default=False)
     class Meta:
         db_table = "Alquiler"
         verbose_name = "Registro de alquileres"
