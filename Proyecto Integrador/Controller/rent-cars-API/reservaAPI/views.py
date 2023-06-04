@@ -31,6 +31,7 @@ class LogoutView(APIView):
         return Response(status=status.HTTP_200_OK)
     
 class SignupView(generics.CreateAPIView):
+    permission_classes = [AllowAny]
     serializer_class = UserSerializer
 
 #ver autos
