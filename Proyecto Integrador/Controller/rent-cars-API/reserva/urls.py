@@ -17,11 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from reservaAPI import views as vistas
+
 
 router = routers.DefaultRouter()
+#router.register('productos', vistas.verProductos, basename='Producto')
+#router.register('categorias', vistas.verCategorias, basename='Categoria')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('authentication.urls')),
+    path('api/', include('reservaAPI.urls')),
     path('api/', include(router.urls)),
 ]

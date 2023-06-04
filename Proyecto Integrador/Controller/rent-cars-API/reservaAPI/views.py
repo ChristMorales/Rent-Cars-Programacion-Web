@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView    
 from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
 from rest_framework import viewsets
-from .serializers import UserSerializer, ClientesSerializer, LocalesSerializer, AutosSerializer, AlquileresSerializer
+from .serializers import UserSerializer, LocalesSerializer, AutosSerializer, AlquileresSerializer
 from .models import CustomUser, Autos, Locales, Alquileres
 # Create your views here.
 
@@ -36,8 +36,8 @@ class SignupView(generics.CreateAPIView):
 #ver autos
 class verAutos(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
-    #query autos disponibles solamente
-    queryset = Autos.objects.raw('SELECT * FROM Autos WHERE Alquilado = False')
+    #ver query autos disponibles solamente
+    queryset = Autos.objects.all()
     serializer_class = AutosSerializer
 #ver locales
 class verLocales(viewsets.ReadOnlyModelViewSet):

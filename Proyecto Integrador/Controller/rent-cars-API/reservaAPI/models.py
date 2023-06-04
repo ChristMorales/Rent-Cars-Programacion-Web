@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import datetime
 
 class CustomUser(AbstractUser):
     '''extiende de CustomUser'''
@@ -10,7 +11,7 @@ class CustomUser(AbstractUser):
     dni = models.TextField(max_length=12, blank=False)
     nombre = models.CharField(max_length=100, blank=False)
     apellido = models.CharField(max_length=100, blank=False)
-    fecha_nac = models.DateField(blank=False) # ver parametros
+    fecha_nac = models.DateField(blank=True, default=datetime.date.today) # ver parametros
     class Meta:
         db_table = "cliente"
         verbose_name = "Cliente registrado"
@@ -40,7 +41,7 @@ class Autos(models.Model):
     marca = models.CharField(max_length=20, blank=False)
     modelo = models.CharField(max_length=50, blank=False)
     anio = models.CharField(max_length=4, blank=False)
-    alquiler_en_curso = models.IntegerField(default=-1)
+    alquiler_en_curso = models.BooleanField(default=False)
     ID_local = models.ForeignKey(Locales, to_field="ID_local", on_delete=models.CASCADE)
     class Meta:
         db_table = "Auto"
@@ -54,7 +55,7 @@ class Autos(models.Model):
 
 class Alquileres(models.Model):
     Nro_nota = models.AutoField(primary_key=True)
-    ID_cliente = models.ForeignKey(Clientes, to_field="ID_cliente", on_delete=models.CASCADE)
+    ID_cliente = models.ForeignKey(CustomUser, to_field="ID_cliente", on_delete=models.CASCADE)
     ID_auto = models.ForeignKey(Autos, to_field="ID_auto", on_delete=models.CASCADE)
     fecha_alquiler = models.DateField()
     fecha_devolucion = models.DateField()

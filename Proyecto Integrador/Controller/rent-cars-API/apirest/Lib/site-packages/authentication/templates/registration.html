@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block form %}
+    <fieldset style="width:80%; margin:auto;">
+        <h1  style="text-align:center"> Registration </h1>
+        {% include 'registration_form.html' %}
+        <div style="text-align: center;"> Already have an account? Please <a href="/login">login</a>.</div>
+    </fieldset>
+{% endblock %}

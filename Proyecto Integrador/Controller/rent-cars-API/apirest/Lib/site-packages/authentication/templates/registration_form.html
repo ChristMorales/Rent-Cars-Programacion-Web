@@ -1,0 +1,87 @@
+    <form style="margin: auto" action="/registration" method="POST">
+        {{ regform.csrf }}
+        <table style="width:50%; border: 0; table-layout: fixed; margin-left: auto; margin-right: auto">
+            <col align="right">
+            <col align="left">
+            <tr>
+                <td style="width: 20%"> {{ regform.username.label }}* </td>
+                <td style="width: 40%"> {{ regform.username(class="css_class") }}</td>
+                <td> {% if regform.username.errors %}
+                    <ul class="errors">
+                        {% for error in regform.username.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ regform.password.label }}*</td>
+                <td><span id="password">{{ regform.password(class="css_class") }}</span>
+                    <span onclick="password_visibility()">Show</span></td>
+                    <script>
+                        function password_visibility() {
+                          var x = document.getElementById("password");
+                        }
+                    </script>
+                <td> {% if regform.password.errors %}
+                    <ul class="errors">
+                        {% for error in regform.password.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ regform.confirm.label }}*</td>
+                <td>{{ regform.confirm(class="css_class") }}</td>
+                <td> {% if regform.confirm.errors %}
+                    <ul class="errors">
+                        {% for error in regform.confirm.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ regform.first_name.label }}*</td>
+                <td>{{ regform.first_name(class="css_class") }}</td>
+                <td> {% if regform.first_name.errors %}
+                    <ul class="errors">
+                        {% for error in regform.first_name.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ regform.dob.label }}</td>
+                <td>{{ regform.dob(class="css_class") }} </td>
+                <td> {% if regform.dob.errors %}
+                    <ul class="errors">
+                        {% for error in regform.dob.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ regform.email.label }}*</td>
+                <td>{{ regform.email(class="css_class") }}</td>
+                <td> {% if regform.email.errors %}
+                    <ul class="errors">
+                        {% for error in regform.email.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+        </table>
+        <p style="text-align: center;"> All entries with * are required.</p>
+        <p style="text-align: center;"><input type="submit" name="submit" value="submit"></p>
+    </form>

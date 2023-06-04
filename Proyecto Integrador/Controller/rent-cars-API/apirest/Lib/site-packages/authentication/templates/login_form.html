@@ -1,0 +1,36 @@
+    <form style="margin: auto" action="/login" method="POST">
+        {{ loginform.csrf }}
+        <table style="width:50%; border: 0; table-layout: fixed; margin-left: auto; margin-right: auto">
+            <col align="right">
+            <col align="left">
+            <tr>
+                <td style="width:30%">{{ loginform.username.label }}</td>
+                <td>{{ loginform.username(class="css_class") }}</td>
+                <td> {% if loginform.username.errors %}
+                    <ul class="errors">
+                        {% for error in loginform.username.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>{{ loginform.password.label }}</td>
+                <td>{{ loginform.password(class="css_class") }}</td>
+                <td> {% if loginform.password.errors %}
+                    <ul class="errors">
+                        {% for error in loginform.password.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>Remember me?</td>
+                <td><input type="checkbox" name="rememberme" value="yes"></td>
+            </tr>
+        </table>
+        <p style="text-align: center;"><input type="submit" name="submit" value="submit"></p>
+    </form>
