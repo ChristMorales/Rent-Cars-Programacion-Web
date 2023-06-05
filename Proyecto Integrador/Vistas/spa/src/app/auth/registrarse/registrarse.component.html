@@ -1,8 +1,12 @@
-<form action="" class="formulario__register" view>
+
+<form [formGroup] = "form">
     <h2>Registrarse</h2>
-    <input type="text" placeholder="Nombre completo" required>
-    <input type="text" placeholder="Correo Electrónico"  id="email2" required>
-    <input type="text" placeholder="Usuario" maxlength="16" minlength="8" required>
-    <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" id="pass"required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+    <input type="email" class="form-control" formControlName="email" placeholder="Correo Electrónico">
+    <input type="text" class="form-control" formControlName="username" placeholder="Nombre de Usuario">
+    <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+    <input type="text" class="form-control" formControlName="dni" placeholder="Numero de documento">
+    <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
+    <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
+    <input type="date" class="form-control" formControlName="fechaNacimiento">
     <button>Registrarse</button>
 </form>

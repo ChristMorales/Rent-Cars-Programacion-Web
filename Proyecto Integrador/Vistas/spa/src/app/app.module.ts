@@ -9,10 +9,12 @@ import { AuthModule } from './auth/auth.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestApiService } from './servicios/test-api.service';
 
+
 AuthModule
 AppRoutingModuleTsModule
 LayoutModule
 PagesModule
+
 
 @NgModule({
   declarations: [
