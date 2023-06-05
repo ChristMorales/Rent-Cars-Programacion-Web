@@ -1,0 +1,25 @@
+
+.nuestrosServicios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin: 70px 0;
+}
+
+.nuestrosServicios img {
+  width: 50%;
+  height: 180px;
+}
+
+.nuestrosServicios h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.nuestrosServicios a {
+  padding: 10px 0;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: bold;
+}

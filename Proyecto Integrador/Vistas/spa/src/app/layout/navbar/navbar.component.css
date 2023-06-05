@@ -1,0 +1,36 @@
+.nav-main {
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+  }
+  
+  .nav-brand {
+    width: 50px;
+  }
+  
+  /*NAVBAR LEFT*/
+  .nav-main ul {
+    display: flex;
+  }
+  
+  .nav-main ul li {
+    padding: 10px;
+  }
+  
+  .nav-main ul li a {
+    padding: 2px;
+  }
+  
+  .nav-main ul li a:hover {
+    border-bottom: 2px solid #fff;
+  }
+  
+  .nav-main ul.nav-menu {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+ 

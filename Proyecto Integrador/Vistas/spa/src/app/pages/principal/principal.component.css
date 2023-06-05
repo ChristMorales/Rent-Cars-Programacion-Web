@@ -1,0 +1,60 @@
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/*REDES SOCIALES*/
+.social {
+  margin: 50px;
+}
+.social p {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.links a {
+  margin: 0 30px;
+}
+
+.links a i {
+  font-size: 3rem;
+}
+
+
+.nuestros-servicios .container {
+  width: 40%;
+  padding: 90px 0 0 30px;
+  color: #fff;
+}
+
+.nuestros-servicios-two .container {
+  width: 40%;
+  padding: 100px 0 0 30px;
+}
+.nuestros-servicios p,
+.nuestros-servicios-two p {
+  margin: 10px 0 20px 0;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  font-weight: bold;
+  padding: 10px 20px;
+  background: #262626;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #fff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  background-color: rgb(114, 66, 7);
+}
