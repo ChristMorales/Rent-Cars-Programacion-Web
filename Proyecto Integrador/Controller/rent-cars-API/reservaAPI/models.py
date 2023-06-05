@@ -7,7 +7,7 @@ class CustomUser(AbstractUser):
     ID_cliente = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=150, unique=True)
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'password']
+    REQUIRED_FIELDS = ['username', 'password', 'dni', 'nombre', 'apellido', 'fecha_nac']
     dni = models.TextField(max_length=12, blank=False)
     nombre = models.CharField(max_length=100, blank=False)
     apellido = models.CharField(max_length=100, blank=False)
@@ -25,6 +25,7 @@ class Locales(models.Model):
     ID_local = models.AutoField(primary_key=True)
     nombre_local = models.CharField(max_length=120, blank=False)
     direccion = models.CharField(max_length=100, blank=False)
+    imagen = models.CharField(max_length=250, blank=False)
     class Meta:
         db_table = "Local"
         verbose_name = "Ubicacion geografica de nuestros locales"
@@ -43,6 +44,7 @@ class Autos(models.Model):
     anio = models.CharField(max_length=4, blank=False)
     alquiler_en_curso = models.BooleanField(default=False)
     ID_local = models.ForeignKey(Locales, to_field="ID_local", on_delete=models.CASCADE)
+    imagen = models.CharField(max_length=250, blank=False)
     class Meta:
         db_table = "Auto"
         verbose_name = "Auto disponible para alquiler"

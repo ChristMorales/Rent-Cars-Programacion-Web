@@ -4,13 +4,6 @@ from .views import LoginView, LogoutView, SignupView, ProfileView, ListarUsuario
 urlpatterns = [
     path('auth/login/', LoginView.as_view(), name = 'auth_login'),
     path('auth/logout/', LogoutView.as_view(), name = 'auth_logout'),
-]
-
-
-urlpatterns = [
-    # Auth views
-    path('auth/login/', LoginView.as_view(), name='auth_login'),
-    path('auth/logout/', LogoutView.as_view(), name='auth_logout'),
     path('auth/reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
     path('auth/registro/', SignupView.as_view(), name='auth_signup'),
     path('user/profile/', ProfileView.as_view(), name='user_profile'),
