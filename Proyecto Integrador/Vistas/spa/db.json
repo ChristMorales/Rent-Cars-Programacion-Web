@@ -1,0 +1,9 @@
+
+  {"autos": [
+    { "id": 1, "marca": "Audi", "modelo": "A3", "anio": "2015", "imagen": "https://drive.google.com/file/d/1sSBl9eo0ghm3s-1w6QN5Ccc9Sg0re1Tg/view?usp=share_link" },
+    { "id": 2, "marca": "Ford", "modelo": "Focus", "anio": "2016", "imagen": "https://drive.google.com/file/d/1nZcPfrenKSsVMmTJBFa1P1qpXADwd37K/view?usp=share_link" },
+    { "id": 3, "marca": "Toyota", "modelo": "Corolla", "anio": "2017", "imagen": "https://drive.google.com/file/d/1TOG1CjzzVU2t9HE7NMUxhatqQaXs4EXm/view?usp=share_link" },
+    { "id": 4, "marca": "Citroen", "modelo": "Kactus", "anio": "2019", "imagen": "https://drive.google.com/file/d/14aPCekOFptYNPTugdcuMhis2w4BK-HW1/view?usp=share_link" },
+    { "id": 5, "marca": "Renault", "modelo": "Sandero Stepway", "anio": "2020", "imagen": "https://drive.google.com/file/d/101aezyLdXPAOSDYV7TVOz3i5PjkAzMee/view?usp=share_link" }
+  ]}
+  

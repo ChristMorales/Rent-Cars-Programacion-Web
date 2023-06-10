@@ -20,9 +20,9 @@ AppRoutingModuleTsModule
   ],
   exports: [
     FooterComponent,
-     HeaderComponent, 
-     NavbarComponent,
-     CommonModule,
+    HeaderComponent, 
+    NavbarComponent,
+    CommonModule,
   ]
 })
 

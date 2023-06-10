@@ -1,0 +1,82 @@
+<form style="margin: auto" action="/update_user" method="POST">
+    {{ form.csrf }}
+    <table style="width:50%; border: 0; table-layout: fixed; margin-left: auto; margin-right: auto">
+        <col align="right">
+        <col align="left">
+        <tr>
+            <td style="width: 30%"> {{ form.username.label }}* </td>
+            <td> {{ form.username(class="css_class", disabled=True) }} </td>
+            <td>
+                {% if form.username.errors %}
+                    <ul class="errors">
+                        {% for error in form.username.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </td>
+        </tr>
+    <tr>
+            <td>{{ form.cur_password.label }}*</td>
+            <td>{{ form.cur_password(class="css_class") }} </td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label }}</td>
+            <td>{{ form.password(class="css_class") }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.confirm.label }}</td>
+            <td>{{ form.confirm(class="css_class") }}</td>
+            <td>
+                {% if form.confirm.errors %}
+                    <ul class="errors">
+                        {% for error in form.confirm.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.first_name.label }}*</td>
+            <td>{{ form.first_name(class="css_class") }}</td>
+            <td>
+                {% if form.first_name.errors %}
+                    <ul class="errors">
+                        {% for error in form.first_name.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.dob.label }}</td>
+            <td>{{ form.dob(class="css_class") }}</td>
+            <td>
+                {% if form.dob.errors %}
+                    <ul class="errors">
+                        {% for error in form.dob.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <td>{{ form.email.label }}*</td>
+            <td>{{ form.email(class="css_class") }}</td>
+            <td>
+                {% if form.email.errors %}
+                    <ul class="errors">
+                        {% for error in form.email.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </td>
+        </tr>
+    </table>
+    <p style="text-align: center;"> All entries with * are required.</p>
+    <p style="text-align: center;"><input type="submit" name="submit" value="submit"></p>
+</form>
