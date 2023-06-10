@@ -1,17 +1,17 @@
-
-.formulario__login {
+.formulario__registro {
   background-color: #eaf6ff;
   padding: 20px;
   border-radius: 5px;
 }
 
-.formulario__login label {
+.formulario__registro label {
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.formulario__login input[type="text"],
-.formulario__login input[type="password"] {
+.formulario__registro input[type="text"],
+.formulario__registro input[type="email"],
+.formulario__registro input[type="password"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -19,7 +19,7 @@
   border-radius: 4px;
 }
 
-.formulario__login button[type="submit"] {
+.formulario__registro button[type="submit"] {
   background-color: #3498db;
   color: #fff;
   padding: 10px 15px;
@@ -28,27 +28,27 @@
   cursor: pointer;
 }
 
-.formulario__login button[type="submit"]:disabled {
+.formulario__registro button[type="submit"]:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
 
 @media screen and (max-width: 480px) {
-  .formulario__login {
+  .formulario__registro {
     padding: 10px;
   }
 
-  .formulario__login label {
+  .formulario__registro label {
     font-size: 14px;
   }
 
-  .formulario__login input[type="text"],
-  .formulario__login input[type="password"] {
+  .formulario__registro input[type="text"],
+  .formulario__registro input[type="email"],
+  .formulario__registro input[type="password"] {
     padding: 6px;
   }
 
-  .formulario__login button[type="submit"] {
+  .formulario__registro button[type="submit"] {
     padding: 8px 12px;
   }
-
 }

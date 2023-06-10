@@ -1,11 +1,22 @@
-<form [formGroup]="form" (ngSubmit)="onEnviar($event)" class="login-form">
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" formControlName="password" class="form-control">
+
+
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="formulario__login">
+  <div>
+    <label>Correo Electrónico</label>
+    <input type="text" formControlName="username" required>
+    <div *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched">
+      <span *ngIf="loginForm.get('username').errors.required">El nombre de usuario es requerido.</span>
     </div>
-    <div class="form-group">
-      <label for="mail">Email:</label>
-      <input type="email" id="mail" formControlName="mail" class="form-control">
+  </div>
+
+  <div>
+    <label>Contraseña</label>
+    <input type="password" formControlName="password" required>
+    <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+      <span *ngIf="loginForm.get('password').errors.required">La contraseña es requerida.</span>
     </div>
-    <button type="submit" class="login-button">Login</button>
+  </div>
+
+  <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
 </form>
+

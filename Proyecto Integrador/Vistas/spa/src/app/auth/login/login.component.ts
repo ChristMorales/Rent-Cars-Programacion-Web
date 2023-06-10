@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,21 +6,6 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  form: FormGroup;
-  
-  constructor(private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      password: ["", [Validators.required, Validators.minLength(8)]],
-      mail: ["", [Validators.required, Validators.email]]
-    });
-  }
 
-  onEnviar (event:Event){
-    event.preventDefault;
-    if(this.form.valid){
-      alert("Enviar al servidor")
-    }else{
-      this.form.markAllAsTouched();
-    }
-  }
 }
+

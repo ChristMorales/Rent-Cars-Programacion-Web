@@ -6,6 +6,7 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { InformacionComponent } from './pages/informacion/informacion.component';
 import { IniciarSesionComponent } from './pages/iniciar-sesion/iniciar-sesion.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
+import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
@@ -19,6 +20,7 @@ SucursalesComponent
 ServiciosComponent
 RegistroComponent
 ProductosComponent
+PrincipalComponent
 NosotrosComponent
 IniciarSesionComponent
 InformacionComponent
@@ -30,6 +32,7 @@ const routes: Routes = [
   {path: 'informacion', component:InformacionComponent},
   {path: 'iniciarSesion', component:IniciarSesionComponent},
   {path: 'nosotros', component:NosotrosComponent},
+  {path: 'principal', component:PrincipalComponent},
   {path: 'productos', component:ProductosComponent},
   {path: 'registro', component:RegistroComponent},
   {path: 'servicios', component:ServiciosComponent},
@@ -41,10 +44,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
+
   imports: [
     CommonModule,
-    [RouterModule.forRoot(routes)]
+    RouterModule.forRoot(routes)
   ],
+
   exports: [RouterModule]
 })
+
 export class AppRoutingModuleTsModule { }
