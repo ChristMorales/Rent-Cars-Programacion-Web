@@ -27,20 +27,7 @@
   }
   
   
-  .nuestros-servicios .container {
-    width: 40%;
-    padding: 90px 0 0 30px;
-    color: #fff;
-  }
   
-  .nuestros-servicios-two .container {
-    width: 40%;
-    padding: 100px 0 0 30px;
-  }
-  .nuestros-servicios p,
-  .nuestros-servicios-two p {
-    margin: 10px 0 20px 0;
-  }
   
   .btn {
     cursor: pointer;
