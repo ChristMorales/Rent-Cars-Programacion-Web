@@ -6,7 +6,7 @@ import { PagesModule } from './pages/pages.module';
 import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModuleTsModule } from './app-routing.module.ts.module';
 import { AuthModule } from './auth/auth.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { TestApiService } from './servicios/test-api.service';
 
 
@@ -14,7 +14,7 @@ AuthModule
 AppRoutingModuleTsModule
 LayoutModule
 PagesModule
-
+HttpClientModule
 
 @NgModule({
   declarations: [

@@ -20,9 +20,7 @@ export class ProductosComponent {
     .subscribe(resp => {console.log(resp);
           this.productosA = resp;
     })
-    for (let elem of this.productosA){
-      this.productosImg.push(elem.imagen);
-    }
+   
   }
 }
 

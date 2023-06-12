@@ -4,8 +4,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { AppRoutingModuleTsModule } from '../app-routing.module.ts.module';
 import { ReactiveFormsModule} from '@angular/forms'
+
 AppRoutingModuleTsModule
 ReactiveFormsModule
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ ReactiveFormsModule
     CommonModule,
     AppRoutingModuleTsModule,
     ReactiveFormsModule,
+
   ],
 
   exports:[
