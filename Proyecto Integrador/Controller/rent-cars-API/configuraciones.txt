@@ -6,3 +6,11 @@ pip install mysqlclient
 pip install django-cors-headers
 pip install django-rest-passwordreset
 pip install authentication
+
+
+LOGIN
+
+{
+    "email": "christophermorales.me@gmail.com",
+    "username": "christophermorales",
+}

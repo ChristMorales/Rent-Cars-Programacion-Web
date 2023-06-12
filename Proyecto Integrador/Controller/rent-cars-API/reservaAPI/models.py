@@ -17,9 +17,9 @@ class CustomUser(AbstractUser):
         verbose_name = "Cliente registrado"
         verbose_name_plural= "Clientes registrados"
     def __unicode__(self):
-        return self.nombre
+        return self.email
     def __str__(self):
-        return self.nombre
+        return self.email
 
 class Locales(models.Model):
     ID_local = models.AutoField(primary_key=True)
