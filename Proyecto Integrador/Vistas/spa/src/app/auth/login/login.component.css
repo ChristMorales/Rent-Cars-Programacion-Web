@@ -1,54 +1,54 @@
 
-.formulario__login {
-  background-color: #eaf6ff;
-  padding: 20px;
-  border-radius: 5px;
+form {
+  width: 40%;
+  padding: 80px 40px;
+  background: white;
+  position: absolute;
+  border-radius: 20px;
+  right: 0;
 }
 
-.formulario__login label {
-  font-weight: bold;
-  margin-bottom: 5px;
+label {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #46A2FD;
 }
 
-.formulario__login input[type="text"],
-.formulario__login input[type="password"] {
+form input {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.formulario__login button[type="submit"] {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 15px;
+  margin-top: 20px;
+  padding: 10px;
   border: none;
-  border-radius: 4px;
+  background: #F2F2F2;
+  font-size: 16px;
+  outline: none;
+}
+
+form button {
+  padding: 10px 40px;
+  margin-top: 40px;
+  border: none;
+  font-size: 14px;
+  background: #46A2FD;
+  font-weight: 600;
   cursor: pointer;
+  color: white;
+  outline: none;
 }
 
-.formulario__login button[type="submit"]:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.ng-valid:not(form).ng-touched{
+  border-left: 5px solid green;
 }
 
-@media screen and (max-width: 480px) {
-  .formulario__login {
-    padding: 10px;
+.ng-invalid:not(form).ng-touched{
+  border-left: 5px solid red;
+}
+@media screen and (max-width: 850px) {
+  form {
+    top: -10px;
+    left: 50%;
+    margin: auto;
+    position: relative;
   }
-
-  .formulario__login label {
-    font-size: 14px;
-  }
-
-  .formulario__login input[type="text"],
-  .formulario__login input[type="password"] {
-    padding: 6px;
-  }
-
-  .formulario__login button[type="submit"] {
-    padding: 8px 12px;
-  }
-
 }

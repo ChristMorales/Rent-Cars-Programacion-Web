@@ -1,22 +1,30 @@
 
 
-<form [formGroup]="loginForm" (ngSubmit)="login()" class="formulario__login">
+<form [formGroup]="loginForm" (ngSubmit)="onEnviar($event)">
   <div>
     <label>Correo Electrónico</label>
-    <input type="text" formControlName="username" required>
-    <div *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched">
-      <span *ngIf="loginForm.get('username').errors.required">El nombre de usuario es requerido.</span>
+    <input type= "email" formControlName="mail" required>
+    <div *ngIf="Mail?.errors && Mail?.touched">
+      <p *ngIf="Mail?.hasError('required')" class="text-danger">
+        Completar correo electrónico 
+      </p>
+      <p *ngIf="Mail?.hasError('email')" class="text-danger">
+        Formato invalido de correo electrónico
+      </p>
     </div>
   </div>
-
   <div>
     <label>Contraseña</label>
-    <input type="password" formControlName="password" required>
-    <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
-      <span *ngIf="loginForm.get('password').errors.required">La contraseña es requerida.</span>
+    <input type= "password" formControlName="password" required>
+    <div *ngIf="Password?.errors && Password?.touched">
+      <p *ngIf="Password?.hasError('required')" class="text-danger">
+        Completar contraseña
+      </p>
+      <p *ngIf="Password?.errors?.['minlength']" class="text-danger"> <!-- se accede a la propiedad 'minlength' utilizando la notación de corchetes -->
+        La contraseña debe tener un mínimo de 8 caracteres
+      </p>
     </div>
   </div>
-
-  <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+  <button type="submit" [disabled]="loginForm.invalid" (click)="onEnviar($event)">Entrar</button>
 </form>
 
