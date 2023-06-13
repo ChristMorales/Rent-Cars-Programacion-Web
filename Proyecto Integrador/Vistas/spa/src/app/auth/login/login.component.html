@@ -1,9 +1,7 @@
-
-
 <form [formGroup]="loginForm" (ngSubmit)="onEnviar($event)">
   <div>
-    <label>Correo Electrónico</label>
-    <input type= "email" formControlName="mail" required>
+    <label>Iniciar sección</label>
+    <input type= "email" formControlName="mail" required placeholder="Correo Electrónico">
     <div *ngIf="Mail?.errors && Mail?.touched">
       <p *ngIf="Mail?.hasError('required')" class="text-danger">
         Completar correo electrónico 
@@ -14,8 +12,7 @@
     </div>
   </div>
   <div>
-    <label>Contraseña</label>
-    <input type= "password" formControlName="password" required>
+    <input type= "password" formControlName="password" required placeholder="Password">
     <div *ngIf="Password?.errors && Password?.touched">
       <p *ngIf="Password?.hasError('required')" class="text-danger">
         Completar contraseña
@@ -25,6 +22,6 @@
       </p>
     </div>
   </div>
-  <button type="submit" [disabled]="loginForm.invalid" (click)="onEnviar($event)">Entrar</button>
+  <button type="submit"(click)="onEnviar($event)">Entrar </button>
 </form>
 

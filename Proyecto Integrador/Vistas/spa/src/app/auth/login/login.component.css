@@ -1,11 +1,12 @@
 
 form {
-  width: 40%;
+  width: 50%;
   padding: 80px 40px;
   background: white;
   position: absolute;
   border-radius: 20px;
-  right: 0;
+  left: 0;
+  top: 0;
 }
 
 label {

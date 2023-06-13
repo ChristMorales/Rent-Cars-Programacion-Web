@@ -5,23 +5,22 @@
       <div class="caja__trasera-login" >
         <h3>¿Ya tienes una cuenta?</h3>
         <p>Inicia sesión para entrar en la página</p>
-        <button routerLink="/login">Iniciar Sesión</button>
+        <button (click)="mostrarFormLogin()">Iniciar Sesión</button>
       </div>
 
       <div class="caja__trasera-register" >
         <h3>¿Aún no tienes una cuenta?</h3>
         <p>Regístrate para que puedas iniciar sesión</p>
-        <button routerLink="/registrarse">Registrarse</button>
+        <button (click)="mostrarFormRegistrarse()">Registrarse</button>
       </div>
     </div>
 
-    <!-- <div class="contenedor__login-register" >
-
-      <app-login></app-login><!--login-->
-
-       <!--registrarse-->
-
-    <!-- </div> -->
+    <div *ngIf="mostrarLogin">
+      <app-login></app-login>
+    </div>
+    <div *ngIf="mostrarRegistrarse">
+      <app-registrarse></app-registrarse>
+    </div>
 
   </div>
 

@@ -35,6 +35,7 @@ CompraComponent
     CommonModule,
     LayoutModule,
     AppRoutingModuleTsModule,
+    AuthModule
   ],
 
   exports: [
