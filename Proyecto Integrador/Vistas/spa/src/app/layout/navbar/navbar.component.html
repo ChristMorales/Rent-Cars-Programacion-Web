@@ -1,17 +1,17 @@
 <div class="container">
   <nav class="nav-main">
 
-    <a routerLink=""><img src="../../../assets/Imagenes/icono.png" alt="Logo Auto" class="nav-brand"></a>
+    <a routerLink=""><img src="../../../assets/Imagenes/icono.png" alt="Logo Auto" class="nav-brand" (click)="siMostrarHeader()"></a>
 
     <ul class="nav-menu">
-      <li class="nav-item"><a class="nav-link" routerLink="" aria-current="page">Inicio</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="iniciarSesion" aria-current="page">Usuarios</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="servicios" aria-current="page">Servicios</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="productos" aria-current="page">Productos</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="nosotros" aria-current="page">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="sucursales" aria-current="page">Sucursales</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="contacto" aria-current="page">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="informacion" aria-current="page">Informacion Adicional</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="" aria-current="page" (click)="siMostrarHeader()">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="iniciarSesion" aria-current="page" (click)="noMostrarHeader()">Usuarios</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="servicios" aria-current="page" (click)="noMostrarHeader()">Servicios</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="productos" aria-current="page" (click)="noMostrarHeader()">Productos</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="nosotros" aria-current="page" (click)="noMostrarHeader()">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="sucursales" aria-current="page" (click)="noMostrarHeader()">Sucursales</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="contacto" aria-current="page" (click)="noMostrarHeader()">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="informacion" aria-current="page" (click)="noMostrarHeader()">Informacion Adicional</a></li>
     </ul>
 
     <ul class="nav-menu-right">
@@ -23,3 +23,8 @@
     </ul>
   </nav>
   <hr>
+</div>
+
+<div *ngIf=" mostrarHeader">
+  <app-header></app-header>
+</div>

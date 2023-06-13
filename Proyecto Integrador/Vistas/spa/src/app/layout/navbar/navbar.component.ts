@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
+  mostrarHeader: boolean=true;
+  
+  public siMostrarHeader (){
+    this.mostrarHeader= true;
+  }
+
+  public noMostrarHeader (){
+    this.mostrarHeader=false
+  }
 }
