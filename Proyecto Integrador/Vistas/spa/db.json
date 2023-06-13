@@ -5,5 +5,56 @@
     { "id": 3, "marca": "Toyota", "modelo": "Corolla", "anio": "2017", "imagen": "https://drive.google.com/file/d/1TOG1CjzzVU2t9HE7NMUxhatqQaXs4EXm/view?usp=share_link" },
     { "id": 4, "marca": "Citroen", "modelo": "Kactus", "anio": "2019", "imagen": "https://drive.google.com/file/d/14aPCekOFptYNPTugdcuMhis2w4BK-HW1/view?usp=share_link" },
     { "id": 5, "marca": "Renault", "modelo": "Sandero Stepway", "anio": "2020", "imagen": "https://drive.google.com/file/d/101aezyLdXPAOSDYV7TVOz3i5PjkAzMee/view?usp=share_link" }
-  ]}
-  
+  ],
+  "usuarios":
+
+  [
+    {
+        "email": "christophermorales.me@gmail.com",
+        "username": "christophermorales",
+        "password": "pbkdf2_sha256$600000$wz8jvY345rejSFqMbpHpwU$AakOlFSc3TmZA5pMlVTrySPfZlBGM+p+0kgizw/2LNo=",
+        "dni": "32426963",
+        "nombre": "Christopher",
+        "apellido": "Morales",
+        "fecha_nac": "2023-06-03"
+    },
+    {
+        "email": "carlos@rentcars.com",
+        "username": "carlos@rentcars.com",
+        "password": "pbkdf2_sha256$600000$S3aXSe42bQ0X4aLakbSOex$NIHWqPkCA3IIueP1GNhclVhjn6FVfxbSfWYAY2JMy8A=",
+        "dni": "",
+        "nombre": "",
+        "apellido": "",
+        "fecha_nac": "2023-06-04"
+    },
+    {
+        "email": "pepe@rentcars.com",
+        "username": "pepe@rentcars.com",
+        "password": "pbkdf2_sha256$600000$6XRNYU08GCLdd2waM0EYlD$tr3SBy5i3fa28e55esvIp4YCkfrPa/bfCohqzHRPdCs=",
+        "dni": "",
+        "nombre": "",
+        "apellido": "",
+        "fecha_nac": "2023-06-04"
+    },
+    {
+        "email": "test_lunes@rentcars.com",
+        "username": "test_lunes",
+        "password": "pbkdf2_sha256$600000$ndVyPCArm0wLOSy16Z38QN$kNoxN5WTLcapVvlvyA5e1buS7HuKP+dY1m2Ez9oDxZ8=",
+        "dni": "23456789",
+        "nombre": "Test",
+        "apellido": "Lunes",
+        "fecha_nac": "1990-03-22"
+    },
+    {
+        "email": "test_martes@rentcars.com",
+        "username": "testmartes",
+        "password": "pbkdf2_sha256$600000$nLmK0tye25dmTWb53duUjz$f+GGDqn9YxP0cCmuWrsGea2gE5nlIzI/AJOvgI5h3mQ=",
+        "dni": "43256436",
+        "nombre": "Christopher",
+        "apellido": "Morales",
+        "fecha_nac": "1998-03-22"
+    }
+]
+}
+
+// json-server --watch db.json
