@@ -14,7 +14,7 @@ import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import { ServiciosComponent } from './pages/servicios/servicios.component';
+// import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SucursalesComponent } from './pages/sucursales/sucursales.component';
 
 import { LoginComponent } from './auth/login/login.component';
@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'principal', component:PrincipalComponent},
   {path: 'productos', component:ProductosComponent},
   {path: 'registro', component:RegistroComponent},
-  {path: 'servicios', component:ServiciosComponent},
+  // {path: 'servicios', component:ServiciosComponent},
   {path: 'sucursales', component:SucursalesComponent},
   {path: 'login', component:LoginComponent},
   {path: 'registrarse', component:RegistrarseComponent},

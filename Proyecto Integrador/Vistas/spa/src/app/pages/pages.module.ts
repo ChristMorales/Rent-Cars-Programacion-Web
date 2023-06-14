@@ -11,7 +11,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
-import { ServiciosComponent } from './servicios/servicios.component';
+// import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CompraComponent } from './compra/compra.component';
 
@@ -37,7 +37,7 @@ import { CompraComponent } from './compra/compra.component';
     RegistroComponent,
     InformacionComponent,
     SucursalesComponent,
-    ServiciosComponent,
+    // ServiciosComponent,
     CompraComponent,
     ProductosComponent
   ],
@@ -57,7 +57,7 @@ import { CompraComponent } from './compra/compra.component';
     RegistroComponent, 
     InformacionComponent,
     SucursalesComponent, 
-    ServiciosComponent,
+    // ServiciosComponent,
     ProductosComponent,
     CompraComponent
    

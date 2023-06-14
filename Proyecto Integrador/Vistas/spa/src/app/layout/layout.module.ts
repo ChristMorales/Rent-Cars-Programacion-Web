@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
-AppRoutingModuleTsModule
+// AppRoutingModuleTsModule
 
 @NgModule({
   declarations: [
