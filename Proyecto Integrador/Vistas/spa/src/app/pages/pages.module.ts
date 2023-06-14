@@ -15,11 +15,13 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CompraComponent } from './compra/compra.component';
 
-AuthModule
-AppRoutingModuleTsModule
-LayoutModule
-ServiciosComponent
-CompraComponent
+
+
+// AuthModule
+// AppRoutingModuleTsModule
+// LayoutModule
+// ServiciosComponent
+// CompraComponent
 
 @NgModule({
   declarations: [
