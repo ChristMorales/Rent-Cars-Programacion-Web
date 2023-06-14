@@ -25,8 +25,8 @@ AppRoutingModuleTsModule
   exports: [
     FooterComponent,
     HeaderComponent, 
-    NavbarComponent,
-    CommonModule
+    NavbarComponent
+    // CommonModule
   ]
 })
 

@@ -10,11 +10,11 @@ import { AuthModule } from './auth/auth.module';
 import { TestApiService } from './servicios/test-api.service';
 
 
-AuthModule
-AppRoutingModuleTsModule
-LayoutModule
-PagesModule
-HttpClientModule
+// AuthModule
+// AppRoutingModuleTsModule
+// LayoutModule
+// PagesModule
+// HttpClientModule
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ HttpClientModule
     HttpClientModule,
   ],
 
-  providers: [TestApiService,],
+  providers: [TestApiService],
   bootstrap: [AppComponent]
 })
 

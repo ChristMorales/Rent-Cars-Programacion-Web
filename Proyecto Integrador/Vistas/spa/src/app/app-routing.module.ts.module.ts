@@ -20,19 +20,19 @@ import { SucursalesComponent } from './pages/sucursales/sucursales.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
 
-RegistrarseComponent
-LoginComponent
-RouterModule
-SucursalesComponent
-ServiciosComponent
-RegistroComponent
-ProductosComponent
-PrincipalComponent
-NosotrosComponent
-IniciarSesionComponent
-InformacionComponent
-ContactoComponent
-CompraComponent
+// RegistrarseComponent
+// LoginComponent
+// RouterModule
+// SucursalesComponent
+// ServiciosComponent
+// RegistroComponent
+// ProductosComponent
+// PrincipalComponent
+// NosotrosComponent
+// IniciarSesionComponent
+// InformacionComponent
+// ContactoComponent
+// CompraComponent
 
 const routes: Routes = [
   { path: 'header', component: HeaderComponent },
@@ -58,8 +58,9 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    [RouterModule.forRoot(routes)]
+    RouterModule.forRoot(routes)
   ],
+  
   exports: [RouterModule]
 })
 export class AppRoutingModuleTsModule { }

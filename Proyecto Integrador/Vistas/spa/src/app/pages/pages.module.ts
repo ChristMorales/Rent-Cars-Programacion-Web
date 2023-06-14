@@ -23,6 +23,11 @@ import { CompraComponent } from './compra/compra.component';
 // ServiciosComponent
 // CompraComponent
 
+
+// const routes: Routes = [
+//   { path: 'productos', component: ProductosComponent }
+// ];
+
 @NgModule({
   declarations: [
     PrincipalComponent,
