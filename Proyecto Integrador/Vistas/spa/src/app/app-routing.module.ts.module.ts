@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
+
+import { HeaderComponent } from './layout/header/header.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
 import { CompraComponent } from './pages/compra/compra.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { InformacionComponent } from './pages/informacion/informacion.component';
@@ -11,8 +16,10 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SucursalesComponent } from './pages/sucursales/sucursales.component';
+
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
+
 RegistrarseComponent
 LoginComponent
 RouterModule
@@ -26,7 +33,12 @@ IniciarSesionComponent
 InformacionComponent
 ContactoComponent
 CompraComponent
+
 const routes: Routes = [
+  { path: 'header', component: HeaderComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'navbar', component: NavbarComponent },
+
   {path: 'compra', component:CompraComponent},
   {path: 'contacto', component:ContactoComponent},
   {path: 'informacion', component:InformacionComponent},
