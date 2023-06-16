@@ -11,3 +11,11 @@ pip install authentication
 LOGIN
 
 {"email": "christophermorales.me@gmail.com", "password": "Stampart33620"}
+
+{"fecha_alquiler": "2023-06-15",
+        "fecha_devolucion": "2023-06-20",
+        "servicio": "simple",
+        "en_curso": "True",
+        "ID_cliente": 1,
+        "ID_auto": 1,
+        "ID_local": 2}   
