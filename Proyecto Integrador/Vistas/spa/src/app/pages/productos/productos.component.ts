@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestApiService } from 'src/app/servicios/test-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
@@ -13,6 +14,15 @@ export class ProductosComponent {
   constructor(private productosS : TestApiService) {
 
   }
+  // constructor(private router: Router) {}
+
+  // reservar(): void {
+  //   // Lógica de reserva
+  //   // ...
+
+  //   // Redireccionar a la página de compras
+  //   this.router.navigateByUrl('/compra');
+  // }
 
   ngOnInit() : void {
 

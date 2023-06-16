@@ -1,0 +1,43 @@
+<div class="dashboard">
+    <h2>Bienvenido al Dashboard</h2>
+    <p>{{ mensajeBienvenida }}</p>
+  
+    <h3>Autos Alquilados</h3>
+    <table class="tabla-autos">
+      <thead>
+        <tr>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Año</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let auto of autosAlquilados">
+          <td>{{ auto.marca }}</td>
+          <td>{{ auto.modelo }}</td>
+          <td>{{ auto.anio }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h3>Alquileres en Curso</h3>
+    <table class="tabla-alquileres">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Fecha de inicio</th>
+          <th>Fecha de fin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alquiler of alquileresEnCurso">
+          <td>{{ alquiler.cliente }}</td>
+          <td>{{ alquiler.fechaInicio }}</td>
+          <td>{{ alquiler.fechaFin }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <button class="btn-accion">Realizar acción</button>
+  </div>
+  

@@ -14,11 +14,11 @@ ReactiveFormsModule
     LoginComponent,
     RegistrarseComponent,
   ],
+
   imports: [
     CommonModule,
     AppRoutingModuleTsModule,
     ReactiveFormsModule,
-
   ],
 
   exports:[
@@ -26,4 +26,5 @@ ReactiveFormsModule
     RegistrarseComponent,
   ]
 })
+
 export class AuthModule { }
