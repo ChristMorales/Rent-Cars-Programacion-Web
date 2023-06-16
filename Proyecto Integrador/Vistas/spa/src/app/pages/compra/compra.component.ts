@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./compra.component.css']
 })
 export class CompraComponent {
-
+  imagen: string = '../../../assets/Imagenes/auto1.jpg';
+  titulo: string = 'Sedan';
+  descripcion: string = 'Vehículo de cuatro puertas ideal para viajar en familia.';
 }

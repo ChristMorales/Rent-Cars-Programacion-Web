@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar> -->
 
 <!-- <div class="menu-btn">
     <i class="fas fa-bars fa-2x"></i>
@@ -6,8 +6,32 @@
 
 <!-- <app-header></app-header> -->
 
-<app-principal></app-principal>
+<!-- <app-principal></app-principal>
 
 <router-outlet></router-outlet>
 
-<app-footer></app-footer>
+<app-footer></app-footer> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My App</title>
+</head>
+
+<body>
+  <app-navbar></app-navbar>
+
+  <!-- <app-principal></app-principal> -->
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer></app-footer>
+</body>
+
+</html>

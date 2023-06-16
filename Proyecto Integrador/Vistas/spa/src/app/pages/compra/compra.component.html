@@ -1,4 +1,4 @@
-<div class="product-cards-container">
+<!-- <div class="product-cards-container">
   <div class="product-card">
     <img src="../../../assets/Imagenes/auto1.jpg" alt="">
     <h2>Sedan</h2>
@@ -30,4 +30,12 @@
     <h3>Precio: $XX.XX</h3>
     <button>Agregar al carrito</button>
   </div>
+</div> -->
+
+
+<div class="tarjeta-producto">
+  <img [src]="imagen" alt="Imagen del producto" class="imagen-producto" />
+  <h3>{{ titulo }}</h3>
+  <p>{{ descripcion }}</p>
+  <button class="boton-alquilar">Alquilar</button>
 </div>

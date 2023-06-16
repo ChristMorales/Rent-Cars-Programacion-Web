@@ -38,8 +38,9 @@ import { CompraComponent } from './compra/compra.component';
     InformacionComponent,
     SucursalesComponent,
     // ServiciosComponent,
-    CompraComponent,
-    ProductosComponent
+    ProductosComponent,
+    CompraComponent
+    
   ],
 
   imports: [

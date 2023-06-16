@@ -35,6 +35,7 @@ import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
 // CompraComponent
 
 const routes: Routes = [
+  { path: '', component: PrincipalComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'navbar', component: NavbarComponent },
