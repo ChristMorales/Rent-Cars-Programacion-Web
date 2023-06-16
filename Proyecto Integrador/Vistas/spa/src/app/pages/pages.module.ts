@@ -14,6 +14,7 @@ import { SucursalesComponent } from './sucursales/sucursales.component';
 // import { ServiciosComponent } from './servicios/servicios.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CompraComponent } from './compra/compra.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -39,7 +40,8 @@ import { CompraComponent } from './compra/compra.component';
     SucursalesComponent,
     // ServiciosComponent,
     ProductosComponent,
-    CompraComponent
+    CompraComponent,
+    DashboardComponent
     
   ],
 
