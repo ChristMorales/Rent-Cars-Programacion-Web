@@ -4,3 +4,23 @@
     <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" required>
     <button>Entrar</button>
 </form>
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="iniciarSesion()">
+    <label>
+      Email:
+      <input type="email" formControlName="email">
+      <span *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+        Email es inválido o requerido.
+      </span>
+    </label>
+  
+    <label>
+      Contraseña:
+      <input type="password" formControlName="contraseña">
+      <span *ngIf="loginForm.controls.contraseña.invalid && loginForm.controls.contraseña.touched">
+        Contraseña es requerida.
+      </span>
+    </label>
+  
+    <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+  </form> -->
