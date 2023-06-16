@@ -10,7 +10,4 @@ pip install authentication
 
 LOGIN
 
-{
-    "email": "christophermorales.me@gmail.com",
-    "username": "christophermorales",
-}
+{"email": "christophermorales.me@gmail.com", "password": "Stampart33620"}
