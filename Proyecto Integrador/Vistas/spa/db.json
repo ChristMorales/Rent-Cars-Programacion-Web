@@ -18,7 +18,7 @@
         "anio": "2020",
         "alquiler_en_curso": false,
         "imagen": "https://www.imghost.net/ib/vQAfLqtUZ0EyMCv_1685863686.jpg",
-        "ID_local": 7
+        "ID_local": 2
     },
     {
         "ID_auto": 3,
@@ -28,7 +28,7 @@
         "anio": "2021",
         "alquiler_en_curso": false,
         "imagen": "https://www.imghost.net/ib/dhKCjx3wwZCqMjn_1685863782.jpg",
-        "ID_local": 7
+        "ID_local": 2
     },
     {
         "ID_auto": 4,
@@ -38,7 +38,7 @@
         "anio": "2020",
         "alquiler_en_curso": false,
         "imagen": "https://www.imghost.net/ib/7gjEiRP1hpI1P10_1685863767.jpg",
-        "ID_local": 7
+        "ID_local": 2
     },
     {
         "ID_auto": 5,
@@ -48,7 +48,7 @@
         "anio": "2020",
         "alquiler_en_curso": false,
         "imagen": "https://www.imghost.net/ib/BB1WF9y7RiHPHnN_1685863685.jpg",
-        "ID_local": 7
+        "ID_local": 2
     },
     {
         "ID_auto": 6,
@@ -58,7 +58,7 @@
         "anio": "2022",
         "alquiler_en_curso": false,
         "imagen": "https://www.imghost.net/ib/BB1WF9y7RiHPHnN_1685863685.jpg",
-        "ID_local": 7
+        "ID_local": 2
     }
 ],
   "usuarios":[
@@ -178,8 +178,3 @@
 ]
 
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> cc153d72edc5555cb7d5f400688c334e9320fcb6
