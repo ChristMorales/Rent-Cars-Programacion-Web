@@ -1,4 +1,4 @@
-<div class="nuestros-productos">
+<!-- <div class="nuestros-productos">
   
   <div>
     <img src="../../../assets/Imagenes/auto1.jpg" alt="" />
@@ -30,9 +30,9 @@
     <p>Si te gusta la aventura, recorrer caminos imposibles y descubrir rincones maravillosos, éste es tu vehículo
       ideal. Fuerza, destreza y confianza.</p>
       <button (click)="reservar()">Reservar</button>
-  </div>
+  </div> -->
 
-<!-- </div>
+<!-- </div> -->
 <div class="nuestros-productos">
   <div
   *ngFor="let auto of productosA">
@@ -44,7 +44,8 @@
     <h3>{{ auto.marca }} </h3>
     <p>{{ auto.modelo }}</p>
     <p>{{ auto.anio }}</p>
-    <a href="#">Reservar <i class="fas fa-angle-double-right"></i></a>
+    <!-- <a routerLink="/compra">Comprar</a> -->
+    <a routerLink="/compra" href="#">Reservar<i class="fas fa-angle-double-right"></i></a>
   </div>
 </ng-template>
-</div> -->
+</div>

@@ -1,11 +1,41 @@
- <div class="product-cards-container">
+<div class="formulario">
+  <h2>Formulario de Alquiler</h2>
+  <div class="imagen-auto">
+    <img src="ruta-de-la-imagen-del-auto" alt="Imagen del auto">
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="fechaInicio">Fecha de inicio:</label>
+      <input type="date" id="fechaInicio" name="fechaInicio" required>
+    </div>
+    <div class="form-group">
+      <label for="fechaFin">Fecha de fin:</label>
+      <input type="date" id="fechaFin" name="fechaFin" required>
+    </div>
+    <div class="form-group">
+      <label for="diasAlquiler">Días de alquiler:</label>
+      <input type="number" id="diasAlquiler" name="diasAlquiler" readonly>
+    </div>
+    <div class="form-group">
+      <button type="submit" (click)="calcularDias()" class="btn-comprar">Alquilar</button>
+    </div>
+  </form>
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- <div class="product-cards-container">
   <div class="product-card">
     <img src="../../../assets/Imagenes/auto1.jpg" alt="">
     <h2>Sedan</h2>
     <p>Vehículo de cuatro puertas ideal para viajar en familia</p>
     <h3>Precio: $XX.XX</h3>
     <button>Alquilar</button>
-  </div>
+  </div> -->
   
   <!--<div class="product-card">
     <img src="../../../assets/Imagenes/auto2.jpg" alt="">

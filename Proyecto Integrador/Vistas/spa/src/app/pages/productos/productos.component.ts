@@ -8,30 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent {
-  // public productosA : any = [];
-  // mostrarProductos: boolean = true; 
-  // public productosImg : any = [];
-  // constructor(private productosS : TestApiService) {
+  public productosA : any = [];
+  mostrarProductos: boolean = true; 
+  public productosImg : any = [];
+  constructor(private productosS : TestApiService) {
 
-  // }
-  constructor(private router: Router) {}
-
-  reservar(): void {
-    // Lógica de reserva
-    // ...
-
-    // Redireccionar a la página de compras
-    this.router.navigateByUrl('/compra');
   }
+  // constructor(private router: Router) {}
 
-  // ngOnInit() : void {
+  // reservar(): void {
+  //   // Lógica de reserva
+  //   // ...
 
-  //   this.productosS.mostrarEquipo()
-  //   .subscribe(resp => {console.log(resp);
-  //         this.productosA = resp;
-  //   })
-   
+  //   // Redireccionar a la página de compras
+  //   this.router.navigateByUrl('/compra');
   // }
+
+  ngOnInit() : void {
+
+    this.productosS.mostrarEquipo()
+    .subscribe(resp => {console.log(resp);
+          this.productosA = resp;
+    })
+   
+  }
 }
 
 

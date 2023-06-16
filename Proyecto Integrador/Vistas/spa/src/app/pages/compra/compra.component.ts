@@ -1,26 +1,67 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-compra',
   templateUrl: './compra.component.html',
   styleUrls: ['./compra.component.css']
 })
-
 export class CompraComponent {
-  @Input() auto!: Auto;
+  calcularDias() {
+    const fechaInicio = new Date((<HTMLInputElement>document.getElementById('fechaInicio')).value);
+    const fechaFin = new Date((<HTMLInputElement>document.getElementById('fechaFin')).value);
 
-  reservar() {
-    // Lógica para realizar la reserva del auto
-    console.log('Reservar auto:', this.auto);
+    if (fechaInicio && fechaFin) {
+      const diffTime = Math.abs(fechaFin.getTime() - fechaInicio.getTime());
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      (<HTMLInputElement>document.getElementById('diasAlquiler')).value = diffDays.toString();
+    }
   }
 }
 
-interface Auto {
-  modelo: string;
-  descripcion: string;
-  precioAlquiler: number;
-  imageUrl: string;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { Component, Input } from '@angular/core';
+
+// @Component({
+//   selector: 'app-compra',
+//   templateUrl: './compra.component.html',
+//   styleUrls: ['./compra.component.css']
+// })
+
+// export class CompraComponent {
+//   @Input() auto!: Auto;
+
+//   reservar() {
+//     // Lógica para realizar la reserva del auto
+//     console.log('Reservar auto:', this.auto);
+//   }
+// }
+
+// interface Auto {
+//   modelo: string;
+//   descripcion: string;
+//   precioAlquiler: number;
+//   imageUrl: string;
+// }
 
 
 
