@@ -45,7 +45,6 @@ const routes: Routes = [
   {path: 'informacion', component:InformacionComponent},
   {path: 'iniciarSesion', component:IniciarSesionComponent},
   {path: 'nosotros', component:NosotrosComponent},
-  {path: 'principal', component:PrincipalComponent},
   {path: 'productos', component:ProductosComponent},
   {path: 'registro', component:RegistroComponent},
   // {path: 'servicios', component:ServiciosComponent},
