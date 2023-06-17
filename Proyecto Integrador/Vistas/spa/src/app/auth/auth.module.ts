@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { AppRoutingModuleTsModule } from '../app-routing.module.ts.module';
-import { ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule} from '@angular/forms';
+import { RegistroOkComponent } from './registro.ok/registro.ok.component';
+import { RegistroErrorComponent } from './registro.error/registro.error.component'
 
 AppRoutingModuleTsModule
 ReactiveFormsModule
@@ -13,6 +15,8 @@ ReactiveFormsModule
   declarations: [
     LoginComponent,
     RegistrarseComponent,
+    RegistroOkComponent,
+    RegistroErrorComponent,
   ],
 
   imports: [

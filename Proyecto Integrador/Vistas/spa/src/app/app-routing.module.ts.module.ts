@@ -19,7 +19,8 @@ import { SucursalesComponent } from './pages/sucursales/sucursales.component';
 
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
-
+import { RegistroOkComponent } from './auth/registro.ok/registro.ok.component';
+import { RegistroErrorComponent } from './auth/registro.error/registro.error.component';
 // RegistrarseComponent
 // LoginComponent
 // RouterModule
@@ -51,7 +52,9 @@ const routes: Routes = [
   {path: 'sucursales', component:SucursalesComponent},
   {path: 'login', component:LoginComponent},
   {path: 'registrarse', component:RegistrarseComponent},
-  {path: '', redirectTo: './app.component', pathMatch: 'full'}
+  {path: '', redirectTo: './app.component', pathMatch: 'full'},
+  {path: 'registro.ok', component:RegistroOkComponent},
+  {path: 'registro.error', component:RegistroErrorComponent},
 ]
 
 @NgModule({

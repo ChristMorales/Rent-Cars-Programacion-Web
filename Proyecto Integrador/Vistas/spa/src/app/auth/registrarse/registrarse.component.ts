@@ -1,16 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrarse',
   templateUrl: './registrarse.component.html',
-  styleUrls: ['./registrarse.component.css']
+  styleUrls: ['./registrarse.component.css'],
+  providers: [DatePipe] 
 })
 export class RegistrarseComponent implements OnInit {
   form: FormGroup;
 
-  constructor(public formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(
+    public formBuilder: FormBuilder,
+    private http: HttpClient,
+    private datePipe: DatePipe,
+    private router: Router
+  ) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       username: ['', [Validators.required]],
@@ -41,69 +49,26 @@ export class RegistrarseComponent implements OnInit {
     formData.append('dni', this.form.get('dni')?.value);
     formData.append('nombre', this.form.get('nombre')?.value);
     formData.append('apellido', this.form.get('apellido')?.value);
-    formData.append('fechaNacimiento', this.form.get('fechaNacimiento')?.value);
+
+    // cambio formato de fecha para que coincida con el de Django (yyyy-MM-dd)
+    const fechaNacimientoValue = this.datePipe.transform(
+      this.form.get('fechaNacimiento')?.value,
+      'yyyy-MM-dd'
+    );
+    formData.append('fechaNacimiento', fechaNacimientoValue || '');
 
     this.http
       .post('http://localhost:8000/api/auth/registro/', formData)
       .subscribe({
-        next: (response: any) => console.log(response),
-        error: (error: any) => console.log(error),
+        next: (response: any) => {console.log(response),
+          this.router.navigate(['/registro.ok'], { state: { response } })},
+
+        error: (error: any) => {console.log(error),
+          this.router.navigate(['/registro.error'], { state: { error : error.error } })},
       });
+      
   }
 }
 
 
 
-// import { Component, OnInit } from '@angular/core';
-// import { FormGroup, FormBuilder } from '@angular/forms';
-
-// @Component({
-//   selector: 'app-registrarse',
-//   templateUrl: './registrarse.component.html',
-//   styleUrls: ['./registrarse.component.css']
-// })
-// export class RegistrarseComponent implements OnInit{
-//   [x: string]: any;
-//   form: FormGroup;
-//   constructor (public formBuilder: FormBuilder) {
-//     this.form= this.formBuilder.group(
-//       {
-//         email: ['', []],
-//         username: ['', []],
-//         password: ['', []],
-//         dni: ['', []],
-//         nombre: ['', []],
-//         apellido: ['', []],
-//         fechaNacimiento: ['', []],
-//       }
-//     )}
-
-//     ngOnInit(): void {
-    
-//     }
-//     onEnviar(event: Event){
-//       event.preventDefault;
-//       if(this.form.valid){
-//         alert("Enviar al servidor")
-//       }else{
-//         this.form.markAllAsTouched();
-//       }
-
-  
-//     }
-//     enviarFormulario() {
-//       let formData: any = new FormData();
-//       formData.append('email', this.form.get('email')?.value);
-//       formData.append('username', this.form.get('username')?.value);
-//       formData.append('password', this.form.get('password')?.value);
-//       formData.append('dni', this.form.get('dni')?.value);
-//       formData.append('nombre', this.form.get('nombre')?.value);
-//       formData.append('apellido', this.form.get('apellido')?.value);
-//       formData.append('fechaNacimiento', this.form.get('fechaNacimiento')?.value);
-//       this['http'].post('http://localhost:8000/api/auth/registro/', formData)
-//         .subscribe({
-//           next: (response: any) => console.log(response),
-//           error: (error: any) => console.log(error),
-//         })
-//     }
-//   }
