@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestApiService } from 'src/app/servicios/test-api.service';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
