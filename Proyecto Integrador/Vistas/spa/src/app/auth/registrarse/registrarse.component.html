@@ -1,12 +1,13 @@
-
+<main>
 <form [formGroup] = "form" (ngSubmit)="onEnviar($event)">
     <h2>Registrarse</h2>
-    <input type="email" class="form-control" formControlName="email" placeholder="Correo Electrónico">
-    <input type="text" class="form-control" formControlName="username" placeholder="Nombre de Usuario">
-    <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
-    <input type="text" class="form-control" formControlName="dni" placeholder="Numero de documento">
     <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre">
     <input type="text" class="form-control" formControlName="apellido" placeholder="Apellido">
+    <input type="email" class="form-control" formControlName="email" placeholder="Correo Electrónico">
+    <!-- <input type="text" class="form-control" formControlName="username" placeholder="Nombre de Usuario"> -->
+    <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+    <input type="text" class="form-control" formControlName="dni" placeholder="Numero de documento">
     <input type="date" class="form-control" formControlName="fechaNacimiento" placeholder="Fecha de Nacimiento">
     <button>Registrarse</button>
 </form>
+</main>

@@ -1,0 +1,37 @@
+.company-intro {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  .travel-experiences {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .highlight {
+    color: #4f2a79;
+    font-weight: 600;
+  }
+  
+  .service-offer {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .vehicle-fleet {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .industry-history {
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .ride-different {
+    font-size: 20px;
+    font-weight: 600;
+    color: #4f2a79;
+  }
+  
