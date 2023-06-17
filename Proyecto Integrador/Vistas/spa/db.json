@@ -1,14 +1,67 @@
 
-  {"autos": [
-    { "id": 1, "marca": "Audi", "modelo": "A3", "anio": "2015", "imagen": "https://drive.google.com/file/d/1sSBl9eo0ghm3s-1w6QN5Ccc9Sg0re1Tg/view?usp=share_link" },
-    { "id": 2, "marca": "Ford", "modelo": "Focus", "anio": "2016", "imagen": "https://drive.google.com/file/d/1nZcPfrenKSsVMmTJBFa1P1qpXADwd37K/view?usp=share_link" },
-    { "id": 3, "marca": "Toyota", "modelo": "Corolla", "anio": "2017", "imagen": "https://drive.google.com/file/d/1TOG1CjzzVU2t9HE7NMUxhatqQaXs4EXm/view?usp=share_link" },
-    { "id": 4, "marca": "Citroen", "modelo": "Kactus", "anio": "2019", "imagen": "https://drive.google.com/file/d/14aPCekOFptYNPTugdcuMhis2w4BK-HW1/view?usp=share_link" },
-    { "id": 5, "marca": "Renault", "modelo": "Sandero Stepway", "anio": "2020", "imagen": "https://drive.google.com/file/d/101aezyLdXPAOSDYV7TVOz3i5PjkAzMee/view?usp=share_link" }
-  ],
-  "usuarios":
-
-  [
+{"autos":[
+    {
+        "ID_auto": 1,
+        "patente": "JKH 123",
+        "marca": "Audi",
+        "modelo": "A3",
+        "anio": "2022",
+        "alquiler_en_curso": false,
+        "imagen": "https://www.imghost.net/ib/iSQeR2DqBVWe3OS_1685863685.jpg",
+        "ID_local": 7
+    },
+    {
+        "ID_auto": 2,
+        "patente": "NCV 456",
+        "marca": "Ford",
+        "modelo": "Focus",
+        "anio": "2020",
+        "alquiler_en_curso": false,
+        "imagen": "https://www.imghost.net/ib/vQAfLqtUZ0EyMCv_1685863686.jpg",
+        "ID_local": 2
+    },
+    {
+        "ID_auto": 3,
+        "patente": "JHK 456",
+        "marca": "Renault",
+        "modelo": "Sandero Stepway",
+        "anio": "2021",
+        "alquiler_en_curso": false,
+        "imagen": "https://www.imghost.net/ib/dhKCjx3wwZCqMjn_1685863782.jpg",
+        "ID_local": 2
+    },
+    {
+        "ID_auto": 4,
+        "patente": "CIT 968",
+        "marca": "Citroen",
+        "modelo": "C4 Kactus",
+        "anio": "2020",
+        "alquiler_en_curso": false,
+        "imagen": "https://www.imghost.net/ib/7gjEiRP1hpI1P10_1685863767.jpg",
+        "ID_local": 2
+    },
+    {
+        "ID_auto": 5,
+        "patente": "JDH7389",
+        "marca": "Toyota",
+        "modelo": "Corolla",
+        "anio": "2020",
+        "alquiler_en_curso": false,
+        "imagen": "https://www.imghost.net/ib/BB1WF9y7RiHPHnN_1685863685.jpg",
+        "ID_local": 2
+    },
+    {
+        "ID_auto": 6,
+        "patente": "test 1",
+        "marca": "test",
+        "modelo": "test",
+        "anio": "2022",
+        "alquiler_en_curso": false,
+        "imagen": "https://www.imghost.net/ib/BB1WF9y7RiHPHnN_1685863685.jpg",
+        "ID_local": 2
+    }
+],
+  "usuarios":[
     {
         "email": "christophermorales.me@gmail.com",
         "username": "christophermorales",
@@ -53,6 +106,75 @@
         "nombre": "Christopher",
         "apellido": "Morales",
         "fecha_nac": "1998-03-22"
+    }],
+"login": {"email": "christophermorales.me@gmail.com", "password": "Stampart33620"},
+"registro":{
+    "email": "",
+    "username": "",
+    "password": "",
+    "dni": "",
+    "nombre": "",
+    "apellido": "",
+    "fecha_nac": ""
+},
+"profile":{
+    "email": "christophermorales.me@gmail.com",
+    "username": "christophermorales",
+    "password": "pbkdf2_sha256$600000$wz8jvY345rejSFqMbpHpwU$AakOlFSc3TmZA5pMlVTrySPfZlBGM+p+0kgizw/2LNo=",
+    "dni": "32426963",
+    "nombre": "Christopher",
+    "apellido": "Morales",
+    "fecha_nac": "2023-06-03"
+}, 
+
+"agregarauto":
+{
+    "patente": "",
+    "marca": "",
+    "modelo": "",
+    "anio": "",
+    "alquiler_en_curso": false,
+    "imagen": "",
+    "ID_local": 7
+},
+"locales":
+[
+    {
+        "ID_local": 6,
+        "nombre_local": "Buenos Aires I",
+        "direccion": "Aeropuerto Internacional Ezeiza",
+        "imagen": "https://www.imghost.net/en/ejkv6quwsCnxOMW"
+    },
+    {
+        "ID_local": 7,
+        "nombre_local": "Cordoba I",
+        "direccion": "Av colon 4400",
+        "imagen": "https://www.imghost.net/en/NPH8AQCOx1bWPIE"
+    },
+    {
+        "ID_local": 8,
+        "nombre_local": "Rosario I",
+        "direccion": "Cordoba 123",
+        "imagen": "https://www.imghost.net/en/h1zWh76wS4l14vZ"
+    },
+    {
+        "ID_local": 9,
+        "nombre_local": "Bariloche",
+        "direccion": "Angel Gallardo 5001",
+        "imagen": "https://www.imghost.net/en/nspkI0OjrgzFY7x"
+    },
+    {
+        "ID_local": 10,
+        "nombre_local": "Mendoza",
+        "direccion": "9 de Julio 500",
+        "imagen": "https://www.imghost.net/en/1SYvFPvgdpKMcvS"
+    },
+    {
+        "ID_local": 11,
+        "nombre_local": "Mar del Plata",
+        "direccion": "Hipolito Yrigoyen 1627",
+        "imagen": "https://www.imghost.net/en/cIwjLjgIZHfvrky"
     }
 ]
+
 }

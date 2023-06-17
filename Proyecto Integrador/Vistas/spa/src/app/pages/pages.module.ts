@@ -49,7 +49,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     CommonModule,
     LayoutModule,
     AppRoutingModuleTsModule,
-    AuthModule 
+    AuthModule,
   ],
 
   exports: [

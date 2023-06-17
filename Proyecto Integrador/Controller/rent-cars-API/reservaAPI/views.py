@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from rest_framework import status, generics
 from rest_framework.response import Response
@@ -7,6 +7,8 @@ from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
 from rest_framework import viewsets
 from .serializers import UserSerializer, LocalesSerializer, AutosSerializer, AlquileresSerializer
 from .models import CustomUser, Autos, Locales, Alquileres
+
+import json
 # Create your views here.
 
 class LoginView(APIView):
@@ -40,6 +42,21 @@ class verAutos(viewsets.ReadOnlyModelViewSet):
     #ver query autos disponibles solamente
     queryset = Autos.objects.all()
     serializer_class = AutosSerializer
+
+class AutosAlquilados(viewsets.ReadOnlyModelViewSet):
+    permission_classes = [IsAdminUser]
+    serializer_class = AutosSerializer
+
+    def get_queryset(self):
+        return Autos.objects.filter(alquiler_en_curso=True)
+
+class AutosDisponibles(viewsets.ReadOnlyModelViewSet):
+    permission_classes = [AllowAny]
+    serializer_class = AutosSerializer
+
+    def get_queryset(self):
+        return Autos.objects.filter(alquiler_en_curso=False)
+
 #ver locales
 class verLocales(viewsets.ReadOnlyModelViewSet):
     permission_classes = [AllowAny]
@@ -79,3 +96,92 @@ class ListarUsuarios(generics.ListCreateAPIView):
         serializer = UserSerializer(queryset, many=True)
         if self.request.user.is_authenticated:
             return Response(serializer.data)
+        
+class procesarAlquiler(APIView):
+    def post(self, request):
+        #veo si el usuario esta autenticado
+        if request.user.is_authenticated:
+            ID_cliente = request.user.ID_cliente
+        else:
+            #Devuelvo error
+            return Response({"aviso": "debe loguearse para poder alquilar"})
+        #campos del model Alquileres
+        alquiler_data = {"fecha_alquiler": request.data.get("fecha_alquiler"),
+        "fecha_devolucion": request.data.get("fecha_devolucion"),
+        "servicio": request.data.get("servicio"),
+        "en_curso": True,
+        "ID_cliente": ID_cliente,
+        "ID_auto": request.data.get("ID_auto"),
+        "ID_local": request.data.get("ID_local")}        
+        alquiler = AlquileresSerializer(data=alquiler_data)
+        if alquiler.is_valid():
+            alquiler.save()
+            #aca busco el auto y cambio el campo alquiler_en_curso a True
+            autos_id = request.data.get("ID_auto")
+            try:
+                autos = Autos.objects.get(ID_auto=autos_id)
+                autos.alquiler_en_curso = True
+                autos.save()
+            except Autos.DoesNotExist:
+                return Response({"error": "No se encuentra auto."}, status=404)
+            return Response(alquiler.data)
+        else:
+            return Response(alquiler.errors)
+        
+class cerrarAlquiler(APIView):
+    def post(self, request):
+        #requiere que se pase como parametro nro nota para cambiar status de nota a cerrado y auto a disponible
+        alquiler_id = request.data.get('Nro_nota')
+        try:
+            alquiler = Alquileres.objects.get(pk=alquiler_id)
+            alquiler.en_curso = False
+            alquiler.save()
+            
+            autos_id = alquiler.ID_auto.pk
+            autos = Autos.objects.get(pk=autos_id)
+            autos.alquiler_en_curso = False
+            autos.save()
+            
+            return Response({"message": "Alquiler finalizado correctamente."})
+        except Alquileres.DoesNotExist:
+            return Response({"error": "No se encuentra alquiler."}, status=404)
+        except Autos.DoesNotExist:
+            return Response({"error": "No se encuentra auto."}, status=404)
+        
+# class ProcessPaymentAPIView(APIView):
+#     def post(self, request):
+#         try:
+#             request_values = json.loads(request.body)
+#             payment_data = {
+#                 "transaction_amount": float(request_values["transaction_amount"]),
+#                 "token": request_values["token"],
+#                 "installments": int(request_values["installments"]),
+#                 "payment_method_id": request_values["payment_method_id"],
+#                 "issuer_id": request_values["issuer_id"],
+#                 "payer": {
+#                     "email": request_values["payer"]["email"],
+#                     "identification": {
+#                         "type": request_values["payer"]["identification"]["type"],
+#                         "number": request_values["payer"]["identification"]["number"],
+#                     },
+#                 },
+#             }
+
+#             sdk = mercadopago.SDK("")
+
+#             payment_response = sdk.payment().create(payment_data)
+
+#             payment = payment_response["response"]
+#             status = {
+#                 "id": payment["id"],
+#                 "status": payment["status"],
+#                 "status_detail": payment["status_detail"],
+#             }
+
+#             return Response(data={"body": status, "statusCode": payment_response["status"]}, status=201)
+#         except Exception as e:
+#             return Response(data={"body": payment_response}, status=400)
+
+class retornarPagado(APIView):  # Retornar custom json 
+    def get(self, request):
+        return Response({"respuesta": "aprobado"})
