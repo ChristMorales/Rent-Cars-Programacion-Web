@@ -9,6 +9,9 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script src="https://kit.fontawesome.com/41ab858822.js" crossorigin="anonymous"></script>
+  <!--bootstrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link
@@ -68,19 +71,56 @@
 
         <div class="contenedor__login-register">
 
-          <form action="" class="formulario__login">
+          <form action="" class="formulario__login needs-validation" novalidate>
             <h2>Iniciar Sesión</h2>
             <input type="text" placeholder="Correo Electronico" id="email" required>
+            <div class="valid-tooltip">
+              ok
+            </div>
+            <div class="invalid-tooltip">
+              ups
+            </div>
             <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" required>
+            <div class="valid-tooltip">
+              ok
+            </div>
+            <div class="invalid-tooltip">
+              ups
+            </div>
             <button>Entrar</button>
           </form>
 
-          <form action="" class="formulario__register">
+          <form action="" class="formulario__register needs-validation" novalidate>
             <h2>Regístrarse</h2>
             <input type="text" placeholder="Nombre completo" required>
-            <input type="text" placeholder="Correo Electronico"  id="email2" required>
+            <div class="valid-tooltip">
+              ok
+            </div>
+            <div class="invalid-tooltip">
+              ups
+            </div>
+            <input type="text" placeholder="Correo Electronico" id="email2" required>
+            <div class="valid-tooltip">
+              ok
+            </div>
+            <div class="invalid-tooltip">
+              ups
+            </div>
             <input type="text" placeholder="Usuario" maxlength="16" minlength="8" required>
-            <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" id="pass"required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <div class="valid-tooltip">
+              ok
+            </div>
+            <div class="invalid-tooltip">
+              ups
+            </div>
+            <input type="password" placeholder="Contraseña" maxlength="20" minlength="10" id="pass" required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+            <div class="valid-tooltip">
+              ok
+            </div>
+            <div class="invalid-tooltip">
+              ups
+            </div>
             <button>Regístrarse</button>
           </form>
         </div>
@@ -175,6 +215,32 @@
   <script src="./js/main.js"></script>
   <script src="js/script.js"></script>
   <script src="js/Valid-Formularios.js"></script>
+  <!--validacion-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
 
 </body>
 
