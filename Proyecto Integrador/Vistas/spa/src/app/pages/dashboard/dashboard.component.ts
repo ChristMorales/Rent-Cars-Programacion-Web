@@ -1,24 +1,86 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { DashboardService } from 'src/app/servicios/dashboard.service';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
-  mensajeBienvenida: string = '¡Bienvenido al dashboard!';
-  autosAlquilados: any[] = [
-    { marca: 'Toyota', modelo: 'Corolla', anio: 2020 },
-    { marca: 'Honda', modelo: 'Civic', anio: 2021 },
-    { marca: 'Ford', modelo: 'Mustang', anio: 2019 },
-    { marca: 'Chevrolet', modelo: 'Camaro', anio: 2022 },
-    { marca: 'Nissan', modelo: 'Sentra', anio: 2020 }
-  ];
-  alquileresEnCurso: any[] = [
-    { cliente: 'Angel DiMaria', fechaInicio: '2023-06-01', fechaFin: '2023-06-07' },
-    { cliente: 'Lionel Messi', fechaInicio: '2023-06-03', fechaFin: '2023-06-10' },
-    { cliente: 'Cristiano Ronaldo', fechaInicio: '2023-06-05', fechaFin: '2023-06-12' },
-    { cliente: 'Emiliano Martinez', fechaInicio: '2023-06-07', fechaFin: '2023-06-14' },
-    { cliente: 'Leandro Paredes', fechaInicio: '2023-06-09', fechaFin: '2023-06-16' }
-  ];
+export class DashboardComponent implements OnInit {
+  isAdminUser: boolean = false;
+  autos: any[] = [];
+  alquileres: any[] = [];
+  usuarios: any[] = [];
+
+  constructor(private usuarioService: UsuarioService, private dashboardService: DashboardService) {}
+
+  ngOnInit(): void {
+    // verificar si el usuario logueado es admin on init
+    this.isAdminUser = this.usuarioService.getUsuario()?.is_admin;
+    console.log(this.isAdminUser);
+
+    if (this.isAdminUser) {
+      this.cargarDatos();
+    }
+  }
+
+  verAutosAlquilados(): void {  
+    this.dashboardService.getAutos().subscribe({
+      next: (response) => {
+        this.autos = response;
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
+  }
+
+  verAlquileres(): void {  
+    this.dashboardService.getAlquileres().subscribe({
+      next: (response) => {
+        this.alquileres = response;
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
+  }
+  
+  verUsuarios(): void {  
+    this.dashboardService.getUsuarios().subscribe({
+      next: (response) => {
+        this.usuarios = response;
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    });
+  }
+
+
+  terminarAlquiler(nroNota: number): void {
+    if (this.isAdminUser) {
+      const confirmResult = confirm('Seguro que desea terminar el Alquiler?');
+      if (confirmResult) {
+        this.dashboardService.postCerrarAlquiler(nroNota).subscribe({
+          next: (response) => {
+            console.log(response.message);
+            this.cargarDatos();
+          },
+          error: (error) => {
+            console.log(error);
+          }
+        });
+      }
+    }
+  }
+  
+  cargarDatos(): void {
+    this.verAutosAlquilados();
+    this.verAlquileres();
+    this.verUsuarios();
+  }
+  
 }

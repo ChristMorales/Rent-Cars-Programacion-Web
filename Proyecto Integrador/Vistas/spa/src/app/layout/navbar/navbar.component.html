@@ -1,3 +1,34 @@
+<!-- <div class="container">
+  <nav class="nav-main">
+
+    <a routerLink=""><img src="../../../assets/Imagenes/icono.png" alt="Logo Auto" class="nav-brand"></a>
+
+    <ul class="nav-menu">
+      <li class="nav-item"><a class="nav-link" routerLink="" aria-current="page">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="iniciarSesion" aria-current="page">Usuarios</a></li>
+      <!-- <li class="nav-item"><a class="nav-link" routerLink="servicios" aria-current="page">Servicios</a></li> 
+      <li class="nav-item"><a class="nav-link" routerLink="productos" aria-current="page">Productos</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="nosotros" aria-current="page">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="sucursales" aria-current="page">Sucursales</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="contacto" aria-current="page">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="informacion" aria-current="page">Informacion Adicional</a></li>
+    </ul>
+
+
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle nav-menu-right" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="nav-link" routerLink="dashboard" aria-current="page">DASHBOARD</a>>
+          <a class="nav-link" routerLink="logout" aria-current="page">LOGOUT</a>
+        </div>
+      </div>
+
+  </nav>
+<hr> -->
+
 <div class="container">
   <nav class="nav-main">
 
@@ -6,7 +37,7 @@
     <ul class="nav-menu">
       <li class="nav-item"><a class="nav-link" routerLink="" aria-current="page">Inicio</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="iniciarSesion" aria-current="page">Usuarios</a></li>
-      <!-- <li class="nav-item"><a class="nav-link" routerLink="servicios" aria-current="page">Servicios</a></li> -->
+
       <li class="nav-item"><a class="nav-link" routerLink="productos" aria-current="page">Productos</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="nosotros" aria-current="page">Nosotros</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="sucursales" aria-current="page">Sucursales</a></li>
@@ -14,12 +45,15 @@
       <li class="nav-item"><a class="nav-link" routerLink="informacion" aria-current="page">Informacion Adicional</a></li>
     </ul>
 
-    <ul class="nav-menu-right">
-      <li>
-        <a href="#">
-          <i class="fas fa-search"></i>
-        </a>
-      </li>
-    </ul>
+    <div>
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        {{ isAuthenticated ? 'Bienvenido, ' + usuario : 'Inicia sesión' }}
+      </button>
+      <ul class="dropdown-menu">
+        <li><a *ngIf="isAuthenticated" class="dropdown-item" routerLink="logout" href="#">LOGOUT</a></li>
+        <li><a *ngIf="isAuthenticated && isAdmin" class="dropdown-item" routerLink="dashboard" href="#">DASHBOARD</a></li>
+      </ul>
+    </div>
   </nav>
-<hr>
+  <hr>
+</div>

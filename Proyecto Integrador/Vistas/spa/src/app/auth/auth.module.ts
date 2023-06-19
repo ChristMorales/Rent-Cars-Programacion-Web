@@ -5,7 +5,8 @@ import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { AppRoutingModuleTsModule } from '../app-routing.module.ts.module';
 import { ReactiveFormsModule} from '@angular/forms';
 import { RegistroOkComponent } from './registro.ok/registro.ok.component';
-import { RegistroErrorComponent } from './registro.error/registro.error.component'
+import { RegistroErrorComponent } from './registro.error/registro.error.component';
+import { LogoutComponent } from './logout/logout.component'
 
 AppRoutingModuleTsModule
 ReactiveFormsModule
@@ -17,6 +18,7 @@ ReactiveFormsModule
     RegistrarseComponent,
     RegistroOkComponent,
     RegistroErrorComponent,
+    LogoutComponent,
   ],
 
   imports: [

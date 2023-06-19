@@ -12,6 +12,8 @@ LOGIN
 
 {"email": "christophermorales.me@gmail.com", "password": "Stampart33620"}
 
+{"email": "jose@rentcars.com", "password": "ispc1234"}
+
 {"fecha_alquiler": "2023-06-15",
         "fecha_devolucion": "2023-06-20",
         "servicio": "simple",
@@ -19,3 +21,14 @@ LOGIN
         "ID_cliente": 1,
         "ID_auto": 1,
         "ID_local": 2}   
+
+pendiente:
+realizar la verificacion de logueado para permitir la reserva o no
+realizar los servicios para ver desde el dashboard
+        sumar alquileres
+        sumar autos Alquilados
+        sumar boton cerrar alquiler
+        mostrar alquiler vencido
+        mostrar acceso a cargar auto
+sumar precios en reserva
+conectar a api de cobro

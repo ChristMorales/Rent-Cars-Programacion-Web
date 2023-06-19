@@ -16,11 +16,13 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 // import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { SucursalesComponent } from './pages/sucursales/sucursales.component';
-
+import { AuthGuard } from './servicios/admin.guard';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrarseComponent } from './auth/registrarse/registrarse.component';
 import { RegistroOkComponent } from './auth/registro.ok/registro.ok.component';
 import { RegistroErrorComponent } from './auth/registro.error/registro.error.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 // RegistrarseComponent
 // LoginComponent
 // RouterModule
@@ -55,6 +57,9 @@ const routes: Routes = [
   {path: '', redirectTo: './app.component', pathMatch: 'full'},
   {path: 'registro.ok', component:RegistroOkComponent},
   {path: 'registro.error', component:RegistroErrorComponent},
+
+  {path: 'logout', component:LogoutComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]}
 ]
 
 @NgModule({

@@ -41,7 +41,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     // ServiciosComponent,
     ProductosComponent,
     CompraComponent,
-    DashboardComponent
+    DashboardComponent,
     
   ],
 

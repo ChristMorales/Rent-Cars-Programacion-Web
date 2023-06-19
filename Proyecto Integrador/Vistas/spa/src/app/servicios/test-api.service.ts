@@ -11,12 +11,10 @@ export class TestApiService {
     console.log("Servicio test esta corriendo");
   }
   
-  testEndPoint:string = "http://localhost:3000/autos";
+  testEndPoint:string = "http://127.0.0.1:8000/api/autos/disponibles";
   mostrarEquipo(): Observable <any> {
 
     return this.http.get(this.testEndPoint)
-
-
     
   }
 

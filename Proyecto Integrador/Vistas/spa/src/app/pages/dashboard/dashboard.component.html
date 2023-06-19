@@ -1,43 +1,86 @@
-<div class="dashboard">
-    <h2>Bienvenido al Dashboard</h2>
-    <p>{{ mensajeBienvenida }}</p>
-  
-    <h3>Autos Alquilados</h3>
-    <table class="tabla-autos">
-      <thead>
-        <tr>
-          <th>Marca</th>
-          <th>Modelo</th>
-          <th>Año</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let auto of autosAlquilados">
-          <td>{{ auto.marca }}</td>
-          <td>{{ auto.modelo }}</td>
-          <td>{{ auto.anio }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <h3>Alquileres en Curso</h3>
-    <table class="tabla-alquileres">
-      <thead>
-        <tr>
-          <th>Cliente</th>
-          <th>Fecha de inicio</th>
-          <th>Fecha de fin</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let alquiler of alquileresEnCurso">
-          <td>{{ alquiler.cliente }}</td>
-          <td>{{ alquiler.fechaInicio }}</td>
-          <td>{{ alquiler.fechaFin }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <button class="btn-accion">Realizar acción</button>
-  </div>
-  
+<h2>Bienvenido al Dashboard</h2>
+<div *ngIf="isAdminUser">
+  <h1>Autos Alquilados</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID_auto</th>
+        <th>patente</th>
+        <th>marca</th>
+        <th>modelo</th>
+        <th>anio</th>
+        <th>precioPorDia</th>
+        <th>ID_local</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let auto of autos">
+        <td>{{ auto.ID_auto }}</td>
+        <td>{{ auto.patente }}</td>
+        <td>{{ auto.marca }}</td>
+        <td>{{ auto.modelo }}</td>
+        <td>{{ auto.anio }}</td>
+        <td>{{ auto.precioPorDia }}</td>
+        <td>{{ auto.ID_local }}</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<div *ngIf="isAdminUser">
+  <h1>Usuarios</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Username</th>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Fecha Nacimiento</th>
+        <th>Admin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.username }}</td>
+        <td>{{ usuario.dni }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellido }}</td>
+        <td>{{ usuario.fecha_nac }}</td>
+        <td>{{ usuario.is_admin }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div>
+  <h1>Alquileres</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nro Nota</th>
+        <th>Fecha Alquiler</th>
+        <th>Fecha Devolución</th>
+        <th>Servicio</th>
+        <th>En Curso</th>
+        <th>ID Cliente</th>
+        <th>ID Auto</th>
+        <th>ID Local</th>
+        <th></th> <!-- columna vacia para el boton -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alquiler of alquileres; let last = last">
+        <td>{{ alquiler.Nro_nota }}</td>
+        <td>{{ alquiler.fecha_alquiler }}</td>
+        <td>{{ alquiler.fecha_devolucion }}</td>
+        <td>{{ alquiler.servicio }}</td>
+        <td>{{ alquiler.en_curso }}</td>
+        <td>{{ alquiler.ID_cliente }}</td>
+        <td>{{ alquiler.ID_auto }}</td>
+        <td>{{ alquiler.ID_local }}</td>
+        <td *ngIf="last"><button (click)="terminarAlquiler(alquiler.Nro_nota)">Terminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -44,7 +44,7 @@ class verAutos(viewsets.ReadOnlyModelViewSet):
     serializer_class = AutosSerializer
 
 class AutosAlquilados(viewsets.ReadOnlyModelViewSet):
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
     serializer_class = AutosSerializer
 
     def get_queryset(self):
@@ -64,12 +64,12 @@ class verLocales(viewsets.ReadOnlyModelViewSet):
     serializer_class = LocalesSerializer
 #ver alquileres, admin user solamente
 class verAlquileres(viewsets.ReadOnlyModelViewSet):
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
     queryset = Alquileres.objects.all()
     serializer_class = AlquileresSerializer
 #agregar autos
 class agregarAuto(APIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
     def post(self, request, format=None):
         serializer = AutosSerializer(data=request.data)
         if serializer.is_valid():
@@ -79,7 +79,7 @@ class agregarAuto(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProfileView(generics.RetrieveUpdateAPIView):
-    permission_classes = [IsAuthenticated] #Solo usuarios logueados pueden ver.
+    permission_classes = [AllowAny] #Solo usuarios logueados pueden ver.
     serializer_class = UserSerializer
     http_method_names = ['get', 'patch']
     def get_object(self):
@@ -89,13 +89,13 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 class ListarUsuarios(generics.ListCreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
-    http_method_names = ['get']
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
+
     def list(self, request):
         queryset = self.get_queryset()
         serializer = UserSerializer(queryset, many=True)
-        if self.request.user.is_authenticated:
-            return Response(serializer.data)
+        return Response(serializer.data)
+
         
 class procesarAlquiler(APIView):
     def post(self, request):
