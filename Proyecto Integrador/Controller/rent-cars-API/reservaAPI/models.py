@@ -65,6 +65,7 @@ class Alquileres(models.Model):
     servicio = models.CharField(max_length=100, blank=False)
     ID_local = models.ForeignKey(Locales, to_field="ID_local", on_delete=models.CASCADE)
     en_curso = models.BooleanField(default=False)
+    monto_cobrado = models.DecimalField(max_digits=10, decimal_places=2)
     class Meta:
         db_table = "Alquiler"
         verbose_name = "Registro de alquileres"

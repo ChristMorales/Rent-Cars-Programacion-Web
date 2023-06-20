@@ -28,7 +28,7 @@ class LoginView(ObtainAuthToken):
             return Response({'error': 'Credenciales no validas'}, status=status.HTTP_400_BAD_REQUEST)
 
 class LogoutView(APIView):
-    permission_classes = [IsAuthenticated] 
+    permission_classes = [AllowAny] 
     def post(self, request):
         logout(request)
         return Response(status=status.HTTP_200_OK)
@@ -124,7 +124,9 @@ class procesarAlquiler(APIView):
         "en_curso": True,
         "ID_cliente": ID_cliente,
         "ID_auto": request.data.get("ID_auto"),
-        "ID_local": request.data.get("ID_local")}        
+        "ID_local": request.data.get("ID_local"),
+        "monto_cobrado": request.data.get("monto_cobrado")
+        }        
         alquiler = AlquileresSerializer(data=alquiler_data)
         if alquiler.is_valid():
             alquiler.save()

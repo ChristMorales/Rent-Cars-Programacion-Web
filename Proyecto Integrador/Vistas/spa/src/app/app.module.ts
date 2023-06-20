@@ -8,6 +8,7 @@ import { LayoutModule } from './layout/layout.module';
 import { AppRoutingModuleTsModule } from './app-routing.module.ts.module';
 import { AuthModule } from './auth/auth.module';
 import { TestApiService } from './servicios/test-api.service';
+import { FormsModule } from '@angular/forms';
 
 // AuthModule
 // AppRoutingModuleTsModule
@@ -28,6 +29,7 @@ import { TestApiService } from './servicios/test-api.service';
     AuthModule,
     HttpClientModule,
     CookieModule.withOptions(),
+    FormsModule,
   ],
 
   providers: [TestApiService],

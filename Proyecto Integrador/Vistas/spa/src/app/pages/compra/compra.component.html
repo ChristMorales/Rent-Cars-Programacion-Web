@@ -1,67 +1,32 @@
+<div class="auto-details" style="text-align: center">
+  <img [src]="autoObject?.imagen" alt="" style="width: 30%;">
+  <h3>{{ autoObject?.marca }}</h3>
+  <p>{{ autoObject?.modelo }}</p>
+  <p>{{ autoObject?.anio }}</p>
+  <p>Precio por día: {{ autoObject?.precioPorDia }}</p>
+</div>
+
 <div class="formulario">
   <h2>Formulario de Alquiler</h2>
-  <div class="imagen-auto">
-    <img src="ruta-de-la-imagen-del-auto" alt="Imagen del auto">
-  </div>
   <form>
     <div class="form-group">
       <label for="fechaInicio">Fecha de Recogida:</label>
-      <input type="date" id="fechaInicio" name="fechaInicio" required>
+      <input type="date" id="fechaInicio" name="fechaInicio" required (change)="fechaInicioChanged($event)">
     </div>
     <div class="form-group">
       <label for="fechaFin">Fecha de Devolución:</label>
-      <input type="date" id="fechaFin" name="fechaFin" required>
+      <input type="date" id="fechaFin" name="fechaFin" required [min]="fechaInicio" (change)="fechaFinChanged($event)">
     </div>
-    <div class="form-group">
+    <div class="form-group" *ngIf="diasAlquiler !== undefined">
       <label for="diasAlquiler">Días de Alquiler:</label>
-      <input type="number" id="diasAlquiler" name="diasAlquiler" readonly>
+      <p>{{ diasAlquiler }}</p>
+    </div>
+    <div class="form-group" *ngIf="montoTotal !== undefined">
+      <label for="montoTotal">Monto Total:</label>
+      <p>{{ montoTotal | currency }}</p>
     </div>
     <div class="form-group">
-      <button type="submit" (click)="calcularDias()" class="btn-comprar">Alquilar</button>
+      <button type="submit" class="btn-comprar">Alquilar</button>
     </div>
   </form>
 </div>
- 
- 
- 
- 
- 
- 
- 
- <!-- <div class="product-cards-container">
-  <div class="product-card">
-    <img src="../../../assets/Imagenes/auto1.jpg" alt="">
-    <h2>Sedan</h2>
-    <p>Vehículo de cuatro puertas ideal para viajar en familia</p>
-    <h3>Precio: $XX.XX</h3>
-    <button>Alquilar</button>
-  </div> -->
-  
-  <!--<div class="product-card">
-    <img src="../../../assets/Imagenes/auto2.jpg" alt="">
-    <h2>Deportivo</h2>
-    <p>Este súper deportivo te ofrece elegancia y adrenalina</p>
-    <h3>Precio: $XX.XX</h3>
-    <button>Agregar al carrito</button>
-  </div>
-  
-  <div class="product-card">
-    <img src="../../../assets/Imagenes/auto3.jpg" alt="">
-    <h2>Familiar</h2>
-    <p>Vehículo ideal para viajes de larga distancia</p>
-    <h3>Precio: $XX.XX</h3>
-    <button>Agregar al carrito</button>
-  </div>
-  
-  <div class="product-card">
-    <img src="../../../assets/Imagenes/auto4.jpg" alt="">
-    <h2>Camioneta 4x4</h2>
-    <p>Vehículo para todo tipo de terreno</p>
-    <h3>Precio: $XX.XX</h3>
-    <button>Agregar al carrito</button>
-  </div>
-</div> -->
-
-
-
-

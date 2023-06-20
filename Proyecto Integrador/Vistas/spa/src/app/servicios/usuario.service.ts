@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable({
@@ -22,13 +22,13 @@ export class UsuarioService {
   setUsuario(usuario: any): void {
     this.usuario = usuario;
     localStorage.setItem(this.USUARIO_KEY, JSON.stringify(usuario));
-    this.usuarioChanged.emit(usuario); // Emit the event when the user information changes
+    this.usuarioChanged.emit(usuario); // emito evento para actualizar acceso a perfil
   }
 
   clearUsuario(): void {
     this.usuario = null;
     localStorage.removeItem(this.USUARIO_KEY);
-    this.usuarioChanged.emit(null); // Emit the event when the user information is cleared
+    this.usuarioChanged.emit(null); // emito evento para borrar perfil y mostrar inicie sesion
   }
 
   isAuthenticated(): boolean {
@@ -53,6 +53,7 @@ export class UsuarioService {
               is_admin: response.user.is_admin,
               token: response.token
             };
+            this.token = response.token; // Store the token in the 'token' property
             this.setUsuario(usuario);
           }
           localStorage.setItem('token', this.token);
@@ -62,10 +63,19 @@ export class UsuarioService {
         }
       });
   }
-
+  
+  
 
   logout(): void {
-    this.http.post('http://127.0.0.1:8000/api/auth/logout/', {}).subscribe({
+    const token = this.token;
+    console.log(this.token);
+    
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Token ${token}`
+    });
+    const options = { headers: headers };
+    this.http.post('http://127.0.0.1:8000/api/auth/logout/', options).subscribe({
       next: (response: any) => {
         console.log(response);
         this.clearUsuario();
@@ -76,9 +86,4 @@ export class UsuarioService {
     });
   }
 
-  getToken(): string {
-    console.log(this.token);
-    
-    return this.token;
-  }
 }
