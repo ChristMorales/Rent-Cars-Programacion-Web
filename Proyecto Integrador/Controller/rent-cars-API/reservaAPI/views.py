@@ -7,27 +7,28 @@ from rest_framework.permissions import IsAdminUser, AllowAny, IsAuthenticated
 from rest_framework import viewsets
 from .serializers import UserSerializer, LocalesSerializer, AutosSerializer, AlquileresSerializer
 from .models import CustomUser, Autos, Locales, Alquileres
+from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.decorators import api_view
 
-import json
-# Create your views here.
 
-class LoginView(APIView):
-    permission_classes = [AllowAny] 
+class LoginView(ObtainAuthToken):
+    permission_classes = [AllowAny]
+
     def post(self, request):
         email = request.data.get('email', None)
         password = request.data.get('password', None)
         user = authenticate(email=email, password=password)
-        if user:
-            login(request, user)
-            return Response(
-                UserSerializer(user).data,
-                status=status.HTTP_200_OK)
-        return Response(
-            status=status.HTTP_404_NOT_FOUND)
 
+        if user:
+            token, created = Token.objects.get_or_create(user=user)
+            serializer = UserSerializer(user)
+            return Response({'token': token.key, 'user': serializer.data})
+        else:
+            return Response({'error': 'Credenciales no validas'}, status=status.HTTP_400_BAD_REQUEST)
 
 class LogoutView(APIView):
-    permission_classes = [AllowAny] 
+    permission_classes = [IsAuthenticated] 
     def post(self, request):
         logout(request)
         return Response(status=status.HTTP_200_OK)
@@ -43,8 +44,19 @@ class verAutos(viewsets.ReadOnlyModelViewSet):
     queryset = Autos.objects.all()
     serializer_class = AutosSerializer
 
+@api_view(['GET'])
+def get_auto_by_id(request, auto_id):
+    try:
+        auto = Autos.objects.get(ID_auto=auto_id)
+        serializer = AutosSerializer(auto)
+        return Response(serializer.data)
+    except Autos.DoesNotExist:
+        return Response(status=404)
+
+
+
 class AutosAlquilados(viewsets.ReadOnlyModelViewSet):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAdminUser]
     serializer_class = AutosSerializer
 
     def get_queryset(self):
@@ -64,12 +76,12 @@ class verLocales(viewsets.ReadOnlyModelViewSet):
     serializer_class = LocalesSerializer
 #ver alquileres, admin user solamente
 class verAlquileres(viewsets.ReadOnlyModelViewSet):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAdminUser]
     queryset = Alquileres.objects.all()
     serializer_class = AlquileresSerializer
 #agregar autos
 class agregarAuto(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAdminUser]
     def post(self, request, format=None):
         serializer = AutosSerializer(data=request.data)
         if serializer.is_valid():
@@ -79,7 +91,7 @@ class agregarAuto(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProfileView(generics.RetrieveUpdateAPIView):
-    permission_classes = [AllowAny] #Solo usuarios logueados pueden ver.
+    permission_classes = [IsAuthenticated] #Solo usuarios logueados pueden ver.
     serializer_class = UserSerializer
     http_method_names = ['get', 'patch']
     def get_object(self):
@@ -89,7 +101,7 @@ class ProfileView(generics.RetrieveUpdateAPIView):
 class ListarUsuarios(generics.ListCreateAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAdminUser]
 
     def list(self, request):
         queryset = self.get_queryset()
@@ -185,3 +197,5 @@ class cerrarAlquiler(APIView):
 class retornarPagado(APIView):  # Retornar custom json 
     def get(self, request):
         return Response({"respuesta": "aprobado"})
+    
+

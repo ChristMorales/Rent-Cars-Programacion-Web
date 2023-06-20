@@ -7,6 +7,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class UsuarioService {
   private readonly USUARIO_KEY = 'usuario';
   private usuario: any;
+  private token: string = "";
   usuarioChanged: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private http: HttpClient) {
@@ -38,24 +39,30 @@ export class UsuarioService {
     return this.usuario && this.usuario.is_admin;
   }
 
+
   login(email: string, password: string): void {
     this.http.post('http://127.0.0.1:8000/api/auth/login/', { email, password })
       .subscribe({
         next: (response: any) => {
           console.log(response);
-          const usuario = {
-            email: response.email,
-            nombre: response.nombre,
-            apellido: response.apellido,
-            is_admin: response.is_admin
-          };
-          this.setUsuario(usuario);
+          if (response.user) {
+            const usuario = {
+              email: response.user.email,
+              nombre: response.user.nombre,
+              apellido: response.user.apellido,
+              is_admin: response.user.is_admin,
+              token: response.token
+            };
+            this.setUsuario(usuario);
+          }
+          localStorage.setItem('token', this.token);
         },
         error: (error: any) => {
           console.log(error);
         }
       });
   }
+
 
   logout(): void {
     this.http.post('http://127.0.0.1:8000/api/auth/logout/', {}).subscribe({
@@ -67,5 +74,11 @@ export class UsuarioService {
         console.log(error);
       }
     });
+  }
+
+  getToken(): string {
+    console.log(this.token);
+    
+    return this.token;
   }
 }

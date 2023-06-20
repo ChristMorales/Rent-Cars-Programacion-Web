@@ -1,52 +1,13 @@
-<!-- <div class="nuestros-productos">
-  
-  <div>
-    <img src="../../../assets/Imagenes/auto1.jpg" alt="" />
-    <h3>Sedan</h3>
-    <p>Vehículo de cuatro puertas ideal para viajar en familia y disfrutar de unas buenas vacaciones. Promete
-      espacio y buen andar.</p>
-      <button (click)="reservar()">Reservar</button>
-  </div>
-
-  <div>
-    <img src="../../../assets/Imagenes/auto2.jpg" alt="" />
-    <h3>Deportivo</h3>
-    <p>Este súper deportivo te ofrece elegancia y adrenalina. Ideal para viaje de negocios o en pareja. Recomendable
-      para tramos cortos.</p>
-      <button (click)="reservar()">Reservar</button>
-  </div>
-
-  <div>
-    <img src="../../../assets/Imagenes/auto3.jpg" alt="" />
-    <h3>Familiar</h3>
-    <p>Vehículo ideal para viajes de larga distancia. Además de buen andar y contar con suficiente espacio, te
-      permite recorrer distintos tipos de caminos.</p>
-      <button (click)="reservar()">Reservar</button>
-  </div>
-
-  <div>
-    <img src="../../../assets/Imagenes/auto4.jpg" alt="" />
-    <h3>Camioneta 4x4</h3>
-    <p>Si te gusta la aventura, recorrer caminos imposibles y descubrir rincones maravillosos, éste es tu vehículo
-      ideal. Fuerza, destreza y confianza.</p>
-      <button (click)="reservar()">Reservar</button>
-  </div> -->
-<!-- </div> -->
-
-
 <div class="nuestros-productos">
-  <div
-  *ngFor="let auto of productosA">
+  <div *ngFor="let auto of productosA">
 </div>
-
-<ng-template ngFor let-auto [ngForOf]="productosA">
-  <div>
-    <img [src] = auto.imagen alt=""/>
-    <h3>{{ auto.marca }} </h3>
-    <p>{{ auto.modelo }}</p>
-    <p>{{ auto.anio }}</p>
-    <!-- <a routerLink="/compra">Comprar</a> -->
-    <a routerLink="/compra" href="#">Reservar<i class="fas fa-angle-double-right"></i></a>
-  </div>
-</ng-template>
+  <ng-template ngFor let-auto [ngForOf]="productosA">
+    <div>
+      <img [src]="auto.imagen" alt="" />
+      <h3>{{ auto.marca }}</h3>
+      <p>{{ auto.modelo }}</p>
+      <p>{{ auto.anio }}</p>
+      <a [routerLink]="['/compra', auto.ID_auto]">Reservar <i class="fas fa-angle-double-right"></i></a>
+    </div>
+  </ng-template>
 </div>

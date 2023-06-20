@@ -79,7 +79,7 @@
         <td>{{ alquiler.ID_cliente }}</td>
         <td>{{ alquiler.ID_auto }}</td>
         <td>{{ alquiler.ID_local }}</td>
-        <td *ngIf="last"><button (click)="terminarAlquiler(alquiler.Nro_nota)">Terminar</button></td>
+        <td *ngIf="alquiler.en_curso"><button (click)="terminarAlquiler(alquiler.Nro_nota)">Terminar</button></td>
       </tr>
     </tbody>
   </table>

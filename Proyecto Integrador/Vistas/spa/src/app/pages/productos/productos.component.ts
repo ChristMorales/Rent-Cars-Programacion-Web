@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestApiService } from 'src/app/servicios/test-api.service';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
-// import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productos',
@@ -16,24 +15,15 @@ export class ProductosComponent {
 
   }
   isAuthenticated: boolean = false;
-  // constructor(private router: Router) {}
-
-  // reservar(): void {
-  //   // Lógica de reserva
-  //   // ...
-
-  //   // Redireccionar a la página de compras
-  //   this.router.navigateByUrl('/compra');
-  // }
 
   ngOnInit() : void {
     
-    this.productosS.mostrarEquipo()
+    this.productosS.getAutosDisponibles()
     .subscribe(resp => {console.log(resp);
           this.productosA = resp;
     })
 
-    // verificar si el usuario logueado es admin on init
+    // verificar si el usuario logueado esta logueado on init
     this.isAuthenticated = this.usuarioService.isAuthenticated();
     
     console.log(this.isAuthenticated)

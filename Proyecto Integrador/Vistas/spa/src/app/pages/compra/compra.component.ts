@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { TestApiService } from 'src/app/servicios/test-api.service';
 
 @Component({
   selector: 'app-compra',
   templateUrl: './compra.component.html',
   styleUrls: ['./compra.component.css']
 })
-export class CompraComponent {
+export class CompraComponent implements OnInit {
   calcularDias() {
     const fechaInicio = new Date((<HTMLInputElement>document.getElementById('fechaInicio')).value);
     const fechaFin = new Date((<HTMLInputElement>document.getElementById('fechaFin')).value);
@@ -17,65 +19,20 @@ export class CompraComponent {
       (<HTMLInputElement>document.getElementById('diasAlquiler')).value = diffDays.toString();
     }
   }
+
+  autoId: number = -1;
+  autoObject: any;
+
+  constructor(private route: ActivatedRoute, private testApiService: TestApiService) {}
+
+  ngOnInit(): void {
+    this.autoId = this.route.snapshot.params['ID_auto'];
+    console.log('Auto ID:', this.autoId);
+
+    this.testApiService.getAutoById(this.autoId)
+      .subscribe((auto: any) => {
+        this.autoObject = auto;
+        console.log('Auto:', this.autoObject);
+      });
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { Component, Input } from '@angular/core';
-
-// @Component({
-//   selector: 'app-compra',
-//   templateUrl: './compra.component.html',
-//   styleUrls: ['./compra.component.css']
-// })
-
-// export class CompraComponent {
-//   @Input() auto!: Auto;
-
-//   reservar() {
-//     // Lógica para realizar la reserva del auto
-//     console.log('Reservar auto:', this.auto);
-//   }
-// }
-
-// interface Auto {
-//   modelo: string;
-//   descripcion: string;
-//   precioAlquiler: number;
-//   imageUrl: string;
-// }
-
-
-
-
-
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-compra',
-//   templateUrl: './compra.component.html',
-//   styleUrls: ['./compra.component.css']
-// })
-// export class CompraComponent {
-//   imagen: string = '../../../assets/Imagenes/auto1.jpg';
-//   titulo: string = 'Sedan';
-//   descripcion: string = 'Vehículo de cuatro puertas ideal para viajar en familia.';
-// }
