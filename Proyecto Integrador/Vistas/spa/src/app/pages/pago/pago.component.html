@@ -1,0 +1,39 @@
+<div class="contenedor__pago">
+    
+<h2>Pago</h2>
+
+<form [formGroup]="pagoForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="tarjetaNumero">Número de tarjeta:</label>
+    <input type="text" id="tarjetaNumero" formControlName="tarjetaNumero">
+  </div>
+  <div class="form-group">
+    <label for="tarjetaMesVencimiento">Mes de vencimiento:</label>
+    <input type="text" id="tarjetaMesVencimiento" formControlName="tarjetaMesVencimiento">
+  </div>
+  <div class="form-group">
+    <label for="tarjetaAnioVencimiento">Año de vencimiento:</label>
+    <input type="text" id="tarjetaAnioVencimiento" formControlName="tarjetaAnioVencimiento">
+  </div>
+  <div class="form-group">
+    <label for="tarjetaCodigo">Código de seguridad:</label>
+    <input type="text" id="tarjetaCodigo" formControlName="tarjetaCodigo">
+  </div>
+  <div class="form-group">
+    <label for="tarjetaTitular">Titular de la tarjeta:</label>
+    <input type="text" id="tarjetaTitular" formControlName="tarjetaTitular">
+  </div>
+  <div class="form-group">
+    <label for="tarjetaDniTitular">DNI del titular:</label>
+    <input type="text" id="tarjetaDniTitular" formControlName="tarjetaDniTitular">
+  </div>
+
+
+  <div class="form-group">
+    <button type="submit" class="btn-pagar" [disabled]="pagoForm.invalid">Pagar {{ montoTotal | currency }}</button>
+  </div>
+</form>
+
+
+
+</div>

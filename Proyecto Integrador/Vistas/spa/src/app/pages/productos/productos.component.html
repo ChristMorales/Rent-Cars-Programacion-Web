@@ -1,13 +1,11 @@
 <div class="nuestros-productos">
   <div *ngFor="let auto of productosA">
-</div>
-  <ng-template ngFor let-auto [ngForOf]="productosA">
-    <div>
-      <img [src]="auto.imagen" alt="" />
-      <h3>{{ auto.marca }}</h3>
-      <p>{{ auto.modelo }}</p>
-      <p>{{ auto.anio }}</p>
-      <a [routerLink]="['/compra', auto.ID_auto]">Reservar <i class="fas fa-angle-double-right"></i></a>
-    </div>
-  </ng-template>
+
+    <img [src]="auto.imagen" alt="" />
+    <h3>{{ auto.marca }}</h3>
+    <p>{{ auto.modelo }}</p>
+    <p>{{ auto.anio }}</p>
+    <a [routerLink]="['/compra', auto.ID_auto]">Reservar <i class="fas fa-angle-double-right"></i></a>
+
+  </div>
 </div>

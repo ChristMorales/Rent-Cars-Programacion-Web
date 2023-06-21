@@ -6,7 +6,6 @@ import { AuthModule } from '../auth/auth.module';
 
 import { PrincipalComponent } from './principal/principal.component';
 import { IniciarSesionComponent } from './iniciar-sesion/iniciar-sesion.component';
-import { ContactoComponent } from './contacto/contacto.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InformacionComponent } from './informacion/informacion.component';
@@ -15,7 +14,8 @@ import { SucursalesComponent } from './sucursales/sucursales.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CompraComponent } from './compra/compra.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { PagoComponent } from './pago/pago.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 // AuthModule
@@ -33,7 +33,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   declarations: [
     PrincipalComponent,
     IniciarSesionComponent,
-    ContactoComponent,
     NosotrosComponent,
     RegistroComponent,
     InformacionComponent,
@@ -42,6 +41,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ProductosComponent,
     CompraComponent,
     DashboardComponent,
+    PagoComponent,
     
   ],
 
@@ -50,12 +50,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LayoutModule,
     AppRoutingModuleTsModule,
     AuthModule,
+    ReactiveFormsModule,
   ],
 
   exports: [
     PrincipalComponent, 
     IniciarSesionComponent, 
-    ContactoComponent, 
     NosotrosComponent, 
     RegistroComponent, 
     InformacionComponent,

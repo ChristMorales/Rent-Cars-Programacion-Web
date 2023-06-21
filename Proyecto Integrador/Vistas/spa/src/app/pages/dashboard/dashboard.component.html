@@ -1,7 +1,7 @@
 <h2>Bienvenido al Dashboard</h2>
 <div *ngIf="isAdminUser">
   <h1>Autos Alquilados</h1>
-  <table>
+  <table *ngIf="autos.length > 0">
     <thead>
       <tr>
         <th>ID_auto</th>
@@ -25,6 +25,7 @@
       </tr>
     </tbody>
   </table>  
+  <p *ngIf="autos.length === 0">No hay autos alquilados.</p>
 </div>
 <div *ngIf="isAdminUser">
   <h1>Usuarios</h1>

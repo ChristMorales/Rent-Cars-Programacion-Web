@@ -9,6 +9,7 @@ import { AppRoutingModuleTsModule } from './app-routing.module.ts.module';
 import { AuthModule } from './auth/auth.module';
 import { TestApiService } from './servicios/test-api.service';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // AuthModule
 // AppRoutingModuleTsModule
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     CookieModule.withOptions(),
     FormsModule,
+    ReactiveFormsModule,
   ],
 
   providers: [TestApiService],

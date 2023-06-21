@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-registrarse',
@@ -17,7 +18,8 @@ export class RegistrarseComponent implements OnInit {
     public formBuilder: FormBuilder,
     private http: HttpClient,
     private datePipe: DatePipe,
-    private router: Router
+    private router: Router,
+    private usuario: UsuarioService
   ) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -30,21 +32,17 @@ export class RegistrarseComponent implements OnInit {
     });
   }
 
+  email!: string;
+  password!: string;
   ngOnInit(): void {}
 
-  onEnviar(event: Event) {
-    event.preventDefault();
-    if (this.form.valid) {
-      this.enviarFormulario();
-    } else {
-      this.form.markAllAsTouched();
-    }
-  }
 
-  enviarFormulario() {
+  onSubmit() {
     const formData: FormData = new FormData();
     formData.append('email', this.form.get('email')?.value);
+    this.email = this.form.get('username')?.value;
     formData.append('username', this.form.get('username')?.value);
+    this.password = this.form.get('password')?.value;
     formData.append('password', this.form.get('password')?.value);
     formData.append('dni', this.form.get('dni')?.value);
     formData.append('nombre', this.form.get('nombre')?.value);
@@ -56,19 +54,19 @@ export class RegistrarseComponent implements OnInit {
       'yyyy-MM-dd'
     );
     formData.append('fechaNacimiento', fechaNacimientoValue || '');
-
-    this.http
-      .post('http://localhost:8000/api/auth/registro/', formData)
+    
+    this.http.post('http://127.0.0.1:8000/api/auth/registro/', formData)
       .subscribe({
-        next: (response: any) => {console.log(response),
-          this.router.navigate(['/registro.ok'], { state: { response } })},
+        next: (response: any) => {
+          console.log(response);   
+          this.usuario.login(this.email, this.password);     
+          alert("Registro exitoso! por favor inicie sesion");
+          this.router.navigate(['/iniciarSesion']);
+        },
 
         error: (error: any) => {console.log(error),
-          this.router.navigate(['/registro.error'], { state: { error : error.error } })},
+          alert("Ocurrio un error, intente nuevamente");
+        }
       });
-      
   }
 }
-
-
-

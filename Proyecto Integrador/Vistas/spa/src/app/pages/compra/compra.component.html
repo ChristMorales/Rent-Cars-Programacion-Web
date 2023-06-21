@@ -8,14 +8,14 @@
 
 <div class="formulario">
   <h2>Formulario de Alquiler</h2>
-  <form>
+  <form [formGroup]="formularioAlquiler" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="fechaInicio">Fecha de Recogida:</label>
-      <input type="date" id="fechaInicio" name="fechaInicio" required (change)="fechaInicioChanged($event)">
+      <input type="date" id="fechaInicio" formControlName="fechaInicio" required (change)="fechaInicioChanged($event)">
     </div>
     <div class="form-group">
       <label for="fechaFin">Fecha de Devolución:</label>
-      <input type="date" id="fechaFin" name="fechaFin" required [min]="fechaInicio" (change)="fechaFinChanged($event)">
+      <input type="date" id="fechaFin" formControlName="fechaFin" required [min]="formularioAlquiler.get('fechaInicio')?.value" (change)="fechaFinChanged($event)">
     </div>
     <div class="form-group" *ngIf="diasAlquiler !== undefined">
       <label for="diasAlquiler">Días de Alquiler:</label>
@@ -26,7 +26,7 @@
       <p>{{ montoTotal | currency }}</p>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn-comprar">Alquilar</button>
+      <button type="submit" class="btn-comprar" [disabled]="formularioAlquiler.invalid || !fechaInicio || !fechaFin">Alquilar</button>
     </div>
   </form>
 </div>

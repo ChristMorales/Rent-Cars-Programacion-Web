@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
         return obj.is_staff
     class Meta:
         model = get_user_model()
-        fields = ('email', 'username', 'password', 'dni', 'nombre', 'apellido', 'fecha_nac', 'is_admin')
+        fields = ('email', 'username', 'password', 'dni', 'nombre', 'apellido', 'fecha_nac', 'is_admin', 'ID_cliente')
     def validate_password(self, value):
         return make_password(value)
 

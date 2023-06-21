@@ -1,40 +1,23 @@
-.dashboard {
-    width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .dashboard h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .dashboard h3 {
-    margin-top: 40px;
-    margin-bottom: 10px;
-  }
-  
-  .dashboard p {
-    margin-bottom: 20px;
-  }
-  
-  .tabla-autos, .tabla-alquileres {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .tabla-autos th, .tabla-alquileres th, .tabla-autos td, .tabla-alquileres td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .btn-accion {
-    background-color: #008000;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
+table {
+  background-color: grey;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table thead {
+  color: black;
+}
+
+

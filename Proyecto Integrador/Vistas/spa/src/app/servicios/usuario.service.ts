@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class UsuarioService {
   private token: string = "";
   usuarioChanged: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     const storedUsuario = localStorage.getItem(this.USUARIO_KEY);
     this.usuario = storedUsuario ? JSON.parse(storedUsuario) : null;
   }
@@ -19,6 +20,9 @@ export class UsuarioService {
     return this.usuario;
   }
 
+  getUsuarioID(): number {
+    return this.usuario.ID_cliente;
+  }
   setUsuario(usuario: any): void {
     this.usuario = usuario;
     localStorage.setItem(this.USUARIO_KEY, JSON.stringify(usuario));
@@ -47,6 +51,7 @@ export class UsuarioService {
           console.log(response);
           if (response.user) {
             const usuario = {
+              ID_cliente: response.user.ID_cliente,
               email: response.user.email,
               nombre: response.user.nombre,
               apellido: response.user.apellido,
@@ -55,6 +60,7 @@ export class UsuarioService {
             };
             this.token = response.token; // Store the token in the 'token' property
             this.setUsuario(usuario);
+            this.router.navigate(['']);
           }
           localStorage.setItem('token', this.token);
         },
@@ -79,6 +85,7 @@ export class UsuarioService {
       next: (response: any) => {
         console.log(response);
         this.clearUsuario();
+        this.router.navigate([""]);
       },
       error: (error: any) => {
         console.log(error);

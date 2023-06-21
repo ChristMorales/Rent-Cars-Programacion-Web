@@ -118,7 +118,8 @@ class procesarAlquiler(APIView):
             #Devuelvo error
             return Response({"aviso": "debe loguearse para poder alquilar"})
         #campos del model Alquileres
-        alquiler_data = {"fecha_alquiler": request.data.get("fecha_alquiler"),
+        alquiler_data = {
+    "fecha_alquiler": request.data.get("fecha_alquiler"),
         "fecha_devolucion": request.data.get("fecha_devolucion"),
         "servicio": request.data.get("servicio"),
         "en_curso": True,
@@ -196,7 +197,8 @@ class cerrarAlquiler(APIView):
 #         except Exception as e:
 #             return Response(data={"body": payment_response}, status=400)
 
-class retornarPagado(APIView):  # Retornar custom json 
+class retornarPagado(APIView):  # Retornar custom json
+    permission_classes = [AllowAny] 
     def get(self, request):
         return Response({"respuesta": "aprobado"})
     
