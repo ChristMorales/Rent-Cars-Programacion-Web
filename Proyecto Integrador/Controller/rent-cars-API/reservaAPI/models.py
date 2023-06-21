@@ -45,6 +45,7 @@ class Autos(models.Model):
     alquiler_en_curso = models.BooleanField(default=False)
     ID_local = models.ForeignKey(Locales, to_field="ID_local", on_delete=models.CASCADE)
     imagen = models.CharField(max_length=250, blank=False)
+    precioPorDia = models.DecimalField(max_digits=10, decimal_places=2)
     class Meta:
         db_table = "Auto"
         verbose_name = "Auto disponible para alquiler"
@@ -64,6 +65,7 @@ class Alquileres(models.Model):
     servicio = models.CharField(max_length=100, blank=False)
     ID_local = models.ForeignKey(Locales, to_field="ID_local", on_delete=models.CASCADE)
     en_curso = models.BooleanField(default=False)
+    monto_cobrado = models.DecimalField(max_digits=10, decimal_places=2)
     class Meta:
         db_table = "Alquiler"
         verbose_name = "Registro de alquileres"
@@ -72,3 +74,4 @@ class Alquileres(models.Model):
         return str(self.Nro_nota)
     def __str__(self):
         return str(self.Nro_nota)
+

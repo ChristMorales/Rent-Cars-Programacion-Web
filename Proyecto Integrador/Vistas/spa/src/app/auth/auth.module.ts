@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegistrarseComponent } from './registrarse/registrarse.component';
 import { AppRoutingModuleTsModule } from '../app-routing.module.ts.module';
-import { ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule} from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component'
 
 AppRoutingModuleTsModule
 ReactiveFormsModule
@@ -13,12 +14,13 @@ ReactiveFormsModule
   declarations: [
     LoginComponent,
     RegistrarseComponent,
+    LogoutComponent,
   ],
+
   imports: [
     CommonModule,
     AppRoutingModuleTsModule,
     ReactiveFormsModule,
-
   ],
 
   exports:[
@@ -26,4 +28,5 @@ ReactiveFormsModule
     RegistrarseComponent,
   ]
 })
+
 export class AuthModule { }

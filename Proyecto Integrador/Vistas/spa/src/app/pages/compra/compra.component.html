@@ -1,1 +1,32 @@
-<p>compra works!</p>
+<div class="auto-details" style="text-align: center">
+  <img [src]="autoObject?.imagen" alt="" style="width: 30%;">
+  <h3>{{ autoObject?.marca }}</h3>
+  <p>{{ autoObject?.modelo }}</p>
+  <p>{{ autoObject?.anio }}</p>
+  <p>Precio por día: {{ autoObject?.precioPorDia }}</p>
+</div>
+
+<div class="formulario">
+  <h2>Formulario de Alquiler</h2>
+  <form [formGroup]="formularioAlquiler" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="fechaInicio">Fecha de Recogida:</label>
+      <input type="date" id="fechaInicio" formControlName="fechaInicio" required (change)="fechaInicioChanged($event)">
+    </div>
+    <div class="form-group">
+      <label for="fechaFin">Fecha de Devolución:</label>
+      <input type="date" id="fechaFin" formControlName="fechaFin" required [min]="formularioAlquiler.get('fechaInicio')?.value" (change)="fechaFinChanged($event)">
+    </div>
+    <div class="form-group" *ngIf="diasAlquiler !== undefined">
+      <label for="diasAlquiler">Días de Alquiler:</label>
+      <p>{{ diasAlquiler }}</p>
+    </div>
+    <div class="form-group" *ngIf="montoTotal !== undefined">
+      <label for="montoTotal">Monto Total:</label>
+      <p>{{ montoTotal | currency }}</p>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn-comprar" [disabled]="formularioAlquiler.invalid || !fechaInicio || !fechaFin">Alquilar</button>
+    </div>
+  </form>
+</div>

@@ -1,25 +1,52 @@
 /*NUESTROS PRODUCTOS*/
 .nuestros-productos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-  margin: 70px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nuestros-productos div {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .nuestros-productos img {
   width: 100%;
-  height: 180px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .nuestros-productos h3 {
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.nuestros-productos p {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
 }
 
 .nuestros-productos a {
-  padding: 10px 0;
-  color: #f2f2f2;
-  text-transform: uppercase;
   display: inline-block;
-  font-weight: bold;
+  background-color: #1310a0;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
 }
+
+.nuestros-productos a:hover {
+  background-color: #527fd1;
+}
+
+.nuestros-productos i {
+  margin-left: 5px;
+}
+
