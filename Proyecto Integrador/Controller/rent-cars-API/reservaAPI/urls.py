@@ -1,6 +1,6 @@
 from django.urls import path, include
 from .views import LoginView, LogoutView, SignupView, ProfileView, ListarUsuarios, agregarAuto, verAutos, verLocales, verAlquileres
-from .views import procesarAlquiler, cerrarAlquiler, AutosAlquilados, AutosDisponibles, get_auto_by_id, retornarPagado
+from .views import procesarAlquiler, cerrarAlquiler, AutosAlquilados, AutosDisponibles, retornarPagado, AutoPorID
 
 urlpatterns = [
     path('auth/login/', LoginView.as_view(), name = 'auth_login'),
@@ -17,7 +17,8 @@ urlpatterns = [
     path('alquileres/', verAlquileres.as_view({'get': 'list'}), name='ver_alquileres'),
     path('procesaralquiler/', procesarAlquiler.as_view(), name = 'crear_alquiler'),
     path('cerraralquiler/', cerrarAlquiler.as_view(), name='cerrar_alquileres'),
-    path('autos/<int:auto_id>/', get_auto_by_id, name='get_auto_by_id'),
+    # path('autos/<int:auto_id>/', get_auto_by_id, name='get_auto_by_id'),
+    path('autos/<int:auto_id>/', AutoPorID.as_view(), name='get_auto_by_id'),
     path('pagar/', retornarPagado.as_view(), name='api de pago'),
 
 ]

@@ -44,14 +44,26 @@ class verAutos(viewsets.ReadOnlyModelViewSet):
     queryset = Autos.objects.all()
     serializer_class = AutosSerializer
 
-@api_view(['GET'])
-def get_auto_by_id(request, auto_id):
-    try:
-        auto = Autos.objects.get(ID_auto=auto_id)
-        serializer = AutosSerializer(auto)
-        return Response(serializer.data)
-    except Autos.DoesNotExist:
-        return Response(status=404)
+# @api_view(['GET'])
+# def get_auto_by_id(auto_id):
+#     permission_classes = [AllowAny]
+#     try:
+#         auto = Autos.objects.get(ID_auto=auto_id)
+#         serializer = AutosSerializer(auto)
+#         return Response(serializer.data)
+#     except Autos.DoesNotExist:
+#         return Response(status=404)
+    
+class AutoPorID(APIView):
+    permission_classes = [IsAuthenticated]
+    def get(self, request, auto_id):
+        
+        try:
+            auto = Autos.objects.get(ID_auto=auto_id)
+            serializer = AutosSerializer(auto)
+            return Response(serializer.data)
+        except Autos.DoesNotExist:
+            return Response(status=404)
 
 
 

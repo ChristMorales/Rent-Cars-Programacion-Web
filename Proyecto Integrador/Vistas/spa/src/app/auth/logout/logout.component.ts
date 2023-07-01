@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-logout',
@@ -8,11 +9,20 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 
 export class LogoutComponent {
-  constructor(private usuarioService: UsuarioService){
+  constructor(private usuarioService: UsuarioService, private router: Router){
   
   }
   cerrarSesion() {
-    this.usuarioService.logout();
+    this.usuarioService.logout().subscribe({
+          next: (response: any) => {
+            console.log(response);
+            this.usuarioService.clearUsuario();
+            this.router.navigate([""]);
+          },
+          error: (error: any) => {
+            console.log(error);
+          }
+        });;
   }
 
   mostrarUsuario() {
