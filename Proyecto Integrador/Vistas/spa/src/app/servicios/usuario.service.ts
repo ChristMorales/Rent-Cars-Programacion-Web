@@ -115,4 +115,8 @@ export class UsuarioService {
     return this.http.post<any[]>('http://127.0.0.1:8000/api/auth/logout/', options);
   }
 
+  registro(form: any): Observable<any[]>{
+    return this.http.post<any[]>('http://127.0.0.1:8000/api/auth/registro/', form);
+  }
+
 }

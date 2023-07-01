@@ -55,7 +55,7 @@ export class RegistrarseComponent implements OnInit {
     );
     formData.append('fechaNacimiento', fechaNacimientoValue || '');
     
-    this.http.post('http://127.0.0.1:8000/api/auth/registro/', formData)
+    this.usuario.registro(formData)
       .subscribe({
         next: (response: any) => {
           console.log(response);   
